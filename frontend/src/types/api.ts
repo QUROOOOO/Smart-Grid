@@ -1,135 +1,249 @@
 export interface HealthResponse {
   status: string;
-  model_loaded: boolean;
-  emission_factor_source: string;
+  models_ready: boolean;
+  cea_months_loaded: string[];
+  total_states_tracked: number;
+  macro_entities: string[];
+  dataset_rows: number;
+  version: string;
 }
 
-export type ZoneType = "off_peak" | "standard" | "peak";
-
-export interface HourlyForecastItem {
-  timestamp: string;
-  hour_label: string;
-  predicted_mw: number;
-  lower_bound_mw: number;
-  upper_bound_mw: number;
-  temp_c: number;
-  humidity_pct: number;
-  rain_mm: number;
-  zone: ZoneType;
-}
-
-export interface ForecastSummary {
-  peak_load_mw: number;
-  peak_hour: string;
-  off_peak_hour: string;
-  min_load_mw: number;
-  avg_load_mw: number;
-  peak_threshold_mw: number;
-  peak_alert_active: boolean;
-  peak_window: string;
-  optimal_charging_window: string;
-}
-
-export interface ForecastSimulationRequest {
-  region: string;
-  temp_offset_c: number;
-  humidity_offset_pct: number;
-  rain_mm: number;
-  is_weekend: boolean;
-  use_live_weather: boolean;
-}
-
-export interface ForecastSimulationResponse {
-  summary: ForecastSummary;
-  hourly_forecast: HourlyForecastItem[];
-}
-
-export interface CarbonScorecardRequest {
-  daily_load_mwh: number;
-  peak_window_mwh: number;
-  peak_shave_pct: number;
-  renewable_shift_pct: number;
-  efficiency_gain_pct: number;
-}
-
-export interface CarbonBreakdown {
-  peak_shaving_tonnes: number;
-  renewable_shift_tonnes: number;
-  efficiency_gain_tonnes: number;
-}
-
-export interface CarbonEquivalents {
-  trees_planted_annual: number;
-  cars_removed_daily: number;
-}
-
-export interface CarbonEmissionFactors {
-  weighted_avg: number;
-  operating_margin: number;
-  combined_margin: number;
-}
-
-export interface CarbonScorecardResponse {
-  baseline_co2_tonnes: number;
-  projected_co2_tonnes: number;
-  total_abated_tonnes: number;
-  abatement_pct: number;
-  grade: "A+" | "A" | "B" | "C" | "D";
-  breakdown: CarbonBreakdown;
-  equivalents: CarbonEquivalents;
-  emission_factors: CarbonEmissionFactors;
-}
-
-export interface AllIndiaTrendItem {
-  month: string;
-  peak_demand_mw: number;
-  peak_met_mw: number;
-  deficit_mw: number;
-}
-
-export interface CeaStateRecord {
-  state: string;
-  region: string;
-  month: string;
-  peak_demand_mw: number;
-  peak_met_mw: number;
-  deficit_mw: number;
-  deficit_pct: number;
-}
-
-export interface CeaStatesResponse {
-  months_available: string[];
-  all_india_trend: AllIndiaTrendItem[];
-  state_records: CeaStateRecord[];
-}
-
-export interface ModelBenchmark {
+export interface EntityMetadata {
+  id: string;
   name: string;
-  mae: number;
-  rmse: number;
-  mape: number;
-  r2: number;
+  level: "national" | "region" | "state";
+  parent_region: string | null;
+  latest_peak_demand_mw: number;
+  max_2026_peak_demand_mw: number;
+  max_2026_peak_month: string;
+  max_shortage_mw: number;
+  max_shortage_pct: number;
 }
 
-export interface PeakMetrics {
-  peak_magnitude_mae_mw: number;
-  peak_timing_error_hrs: number;
+export interface RegionsResponse {
+  macro_entities: EntityMetadata[];
+  states: EntityMetadata[];
 }
 
-export interface ShapItem {
+export interface MonthlyCEARecord {
+  month: string;
+  month_label: string;
+  peak_demand_mw: number;
+  peak_met_mw: number;
+  demand_not_met_mw: number;
+  demand_not_met_pct: number;
+  source_file: string;
+}
+
+export interface ShortageEvent {
+  month: string;
+  entity_id: string;
+  entity_name: string;
+  region: string;
+  peak_demand_mw: number;
+  peak_met_mw: number;
+  demand_not_met_mw: number;
+  demand_not_met_pct: number;
+}
+
+export interface CEASummaryResponse {
+  entity_id: string;
+  entity_name: string;
+  level: string;
+  monthly_series: MonthlyCEARecord[];
+  regional_diversity: Record<string, any>[];
+  top_shortage_events: ShortageEvent[];
+  data_quality_notes: string[];
+}
+
+export interface DatasetAuditResponse {
+  region: string;
+  rows: number;
+  columns: number;
+  start_timestamp: string;
+  end_timestamp: string;
+  frequency: string;
+  missing_values: Record<string, number>;
+  duplicate_timestamps: number;
+  load_stats_mw: Record<string, number>;
+  weather_stats: Record<string, Record<string, number>>;
+  weather_load_correlations: Record<string, number>;
+  cea_peak_calibration_check: Record<string, any>[];
+  audit_observations: string[];
+}
+
+export interface ModelScore {
+  model_name: string;
+  mae_mw: number;
+  rmse_mw: number;
+  mape_pct: number;
+  r2_score: number;
+  daily_peak_mae_mw: number;
+  daily_peak_mape_pct: number;
+  peak_timing_hit_rate_1h_pct: number;
+  peak_alert_f1: number;
+}
+
+export interface FeatureImportanceItem {
   feature: string;
   importance: number;
 }
 
-export interface BacktestItem {
+export interface HoldoutPoint {
   timestamp: string;
   actual_mw: number;
-  predicted_mw: number;
+  xgboost_mw: number;
+  ridge_mw: number;
+  naive_24h_mw: number;
 }
 
 export interface ModelMetricsResponse {
-  models: ModelBenchmark[];
-  peak_metrics: PeakMetrics;
-  shap_importance: ShapItem[];
-  backtest_sample: BacktestItem[];
+  region: string;
+  train_period: string;
+  test_period: string;
+  train_rows: number;
+  test_rows: number;
+  models: ModelScore[];
+  feature_importances: FeatureImportanceItem[];
+  holdout_sample: HoldoutPoint[];
+}
+
+export interface ForecastRequest {
+  entity: string;
+  horizon_hours: number;
+  temp_delta_c: number;
+  humidity_delta_pct: number;
+}
+
+export interface ForecastPoint {
+  timestamp: string;
+  predicted_mw: number;
+  lower_bound_mw: number;
+  upper_bound_mw: number;
+  temperature_c: number;
+  apparent_temp_c: number;
+  relative_humidity_pct: number;
+  shortwave_radiation_wm2: number;
+  precipitation_mm: number;
+  utilization_pct: number;
+  is_flagged_peak: boolean;
+}
+
+export interface ForecastResponse {
+  entity_id: string;
+  entity_name: string;
+  parent_region: string;
+  horizon_hours: number;
+  weather_source: string;
+  temp_delta_c: number;
+  humidity_delta_pct: number;
+  capacity_reference_mw: number;
+  peak_threshold_mw: number;
+  predicted_peak_mw: number;
+  predicted_peak_timestamp: string;
+  predicted_min_mw: number;
+  avg_load_mw: number;
+  flagged_peak_hours: number;
+  points: ForecastPoint[];
+}
+
+export interface PeakChargingRequest {
+  entity: string;
+  horizon_hours: number;
+  temp_delta_c: number;
+  humidity_delta_pct: number;
+  base_tariff_inr: number;
+  shiftable_mw: number;
+}
+
+export interface ChargingHourPoint {
+  timestamp: string;
+  predicted_grid_mw: number;
+  utilization_pct: number;
+  tariff_zone: "solar_rebate" | "normal" | "morning_ramp" | "evening_peak" | "critical_surge";
+  tariff_multiplier: number;
+  effective_tariff_inr_kwh: number;
+  grid_stress_status: "normal" | "elevated" | "critical_peak";
+}
+
+export interface LoadShiftRecommendation {
+  date: string;
+  from_peak_hour: string;
+  to_solar_hour: string;
+  shifted_mw: number;
+  from_tariff_inr_kwh: number;
+  to_tariff_inr_kwh: number;
+  estimated_savings_inr: number;
+}
+
+export interface PeakChargingResponse {
+  entity_id: string;
+  entity_name: string;
+  horizon_hours: number;
+  base_tariff_inr_kwh: number;
+  shiftable_mw: number;
+  total_baseline_cost_inr: number;
+  total_optimized_cost_inr: number;
+  total_savings_inr: number;
+  savings_pct: number;
+  critical_surge_hours: number;
+  solar_rebate_hours: number;
+  hourly_schedule: ChargingHourPoint[];
+  recommendations: LoadShiftRecommendation[];
+}
+
+export interface CarbonScorecardRequest {
+  entity: string;
+  horizon_hours: number;
+  temp_delta_c: number;
+  humidity_delta_pct: number;
+  facility_mw: number;
+  shiftable_pct: number;
+  solar_capacity_mw: number;
+  battery_capacity_mwh: number;
+  base_tariff_inr: number;
+}
+
+export interface CarbonHourPoint {
+  timestamp: string;
+  grid_ef_tco2_mwh: number;
+  marginal_ef_tco2_mwh: number;
+  baseline_facility_mw: number;
+  optimized_grid_draw_mw: number;
+  rooftop_solar_used_mw: number;
+  battery_action_mw: number;
+  baseline_emissions_tco2: number;
+  optimized_emissions_tco2: number;
+}
+
+export interface CarbonScorecardSummary {
+  baseline_emissions_tco2: number;
+  optimized_emissions_tco2: number;
+  abated_tco2: number;
+  annualized_abated_tco2: number;
+  abatement_pct: number;
+  baseline_cost_inr: number;
+  optimized_cost_inr: number;
+  cost_savings_inr: number;
+  annualized_savings_inr: number;
+  coal_avoided_tonnes: number;
+  equivalent_trees_annual: number;
+  sustainability_grade: "A+" | "A" | "B" | "C" | "D";
+}
+
+export interface CarbonScorecardResponse {
+  entity_id: string;
+  entity_name: string;
+  horizon_hours: number;
+  cea_baseline_ef_tco2_mwh: number;
+  summary: CarbonScorecardSummary;
+  hourly_breakdown: CarbonHourPoint[];
+}
+
+export type ApiMode = "live" | "mock";
+
+export interface ApiClientConfig {
+  baseUrl: string;
+  mode: ApiMode;
+  onModeChange?: (mode: ApiMode) => void;
 }
