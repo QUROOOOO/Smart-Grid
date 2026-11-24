@@ -1,0 +1,2802 @@
+{
+  "months": [
+    "2026-01",
+    "2026-02",
+    "2026-03",
+    "2026-04",
+    "2026-05",
+    "2026-06",
+    "2026-07",
+    "2026-08"
+  ],
+  "month_labels": {
+    "2026-05": "May, 2026",
+    "2026-06": "June, 2026",
+    "2026-08": "August, 2026",
+    "2026-01": "January, 2026",
+    "2026-02": "February, 2026",
+    "2026-03": "March, 2026",
+    "2026-04": "April, 2026",
+    "2026-07": "July, 2026"
+  },
+  "records": {
+    "NR": {
+      "2026-05": {
+        "peak_demand_mw": 87675.0,
+        "peak_met_mw": 87675.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 94416.0,
+        "peak_met_mw": 93981.0,
+        "demand_not_met_mw": 435.0,
+        "demand_not_met_pct": 0.5,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 87251.0,
+        "peak_met_mw": 87251.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 75554.0,
+        "peak_met_mw": 75554.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 68098.0,
+        "peak_met_mw": 68098.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 63286.0,
+        "peak_met_mw": 63286.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 76862.0,
+        "peak_met_mw": 76611.0,
+        "demand_not_met_mw": 251.0,
+        "demand_not_met_pct": 0.3,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 95048.0,
+        "peak_met_mw": 95048.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "WR": {
+      "2026-05": {
+        "peak_demand_mw": 82114.0,
+        "peak_met_mw": 82000.0,
+        "demand_not_met_mw": 114.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 80330.0,
+        "peak_met_mw": 80330.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 77169.0,
+        "peak_met_mw": 77142.0,
+        "demand_not_met_mw": 27.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 82724.0,
+        "peak_met_mw": 82695.0,
+        "demand_not_met_mw": 29.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 83081.0,
+        "peak_met_mw": 83081.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 78712.0,
+        "peak_met_mw": 78712.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 81355.0,
+        "peak_met_mw": 81355.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 74692.0,
+        "peak_met_mw": 74692.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "SR": {
+      "2026-05": {
+        "peak_demand_mw": 68234.0,
+        "peak_met_mw": 68234.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 64266.0,
+        "peak_met_mw": 64266.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 70328.0,
+        "peak_met_mw": 70328.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 64892.0,
+        "peak_met_mw": 64892.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 68282.0,
+        "peak_met_mw": 68246.0,
+        "demand_not_met_mw": 36.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 73805.0,
+        "peak_met_mw": 73805.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 74473.0,
+        "peak_met_mw": 74469.0,
+        "demand_not_met_mw": 4.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 72602.0,
+        "peak_met_mw": 72471.0,
+        "demand_not_met_mw": 131.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "ER": {
+      "2026-05": {
+        "peak_demand_mw": 34908.0,
+        "peak_met_mw": 34875.0,
+        "demand_not_met_mw": 33.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 35916.0,
+        "peak_met_mw": 35911.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 35635.0,
+        "peak_met_mw": 35635.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 24916.0,
+        "peak_met_mw": 24878.0,
+        "demand_not_met_mw": 38.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 24991.0,
+        "peak_met_mw": 24986.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 28391.0,
+        "peak_met_mw": 27876.0,
+        "demand_not_met_mw": 515.0,
+        "demand_not_met_pct": 1.8,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 32832.0,
+        "peak_met_mw": 32758.0,
+        "demand_not_met_mw": 74.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 32541.0,
+        "peak_met_mw": 32541.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "NER": {
+      "2026-05": {
+        "peak_demand_mw": 3952.0,
+        "peak_met_mw": 3952.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 4018.0,
+        "peak_met_mw": 4018.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 4308.0,
+        "peak_met_mw": 4306.0,
+        "demand_not_met_mw": 2.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 3021.0,
+        "peak_met_mw": 3021.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 3076.0,
+        "peak_met_mw": 3076.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 3021.0,
+        "peak_met_mw": 3021.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 3752.0,
+        "peak_met_mw": 3743.0,
+        "demand_not_met_mw": 9.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 4106.0,
+        "peak_met_mw": 4106.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "All_India": {
+      "2026-05": {
+        "peak_demand_mw": 270832.0,
+        "peak_met_mw": 270820.0,
+        "demand_not_met_mw": 12.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 264768.0,
+        "peak_met_mw": 264768.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 258276.0,
+        "peak_met_mw": 258270.0,
+        "demand_not_met_mw": 6.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 245444.0,
+        "peak_met_mw": 245416.0,
+        "demand_not_met_mw": 28.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 244209.0,
+        "peak_met_mw": 244206.0,
+        "demand_not_met_mw": 3.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 238379.0,
+        "peak_met_mw": 238378.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 256117.0,
+        "peak_met_mw": 256117.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 270209.0,
+        "peak_met_mw": 270203.0,
+        "demand_not_met_mw": 6.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Chandigarh": {
+      "2026-05": {
+        "peak_demand_mw": 411.0,
+        "peak_met_mw": 411.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 456.0,
+        "peak_met_mw": 456.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 421.0,
+        "peak_met_mw": 421.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 340.0,
+        "peak_met_mw": 340.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 277.0,
+        "peak_met_mw": 277.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 228.0,
+        "peak_met_mw": 228.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 340.0,
+        "peak_met_mw": 340.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 447.0,
+        "peak_met_mw": 447.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Delhi": {
+      "2026-05": {
+        "peak_demand_mw": 8439.0,
+        "peak_met_mw": 8439.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 8439.0,
+        "peak_met_mw": 8439.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 7660.0,
+        "peak_met_mw": 7658.0,
+        "demand_not_met_mw": 2.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 6087.0,
+        "peak_met_mw": 6087.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 5452.0,
+        "peak_met_mw": 5452.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 4592.0,
+        "peak_met_mw": 4588.0,
+        "demand_not_met_mw": 4.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 7091.0,
+        "peak_met_mw": 7091.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 8491.0,
+        "peak_met_mw": 8480.0,
+        "demand_not_met_mw": 11.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Haryana": {
+      "2026-05": {
+        "peak_demand_mw": 13507.0,
+        "peak_met_mw": 13507.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 15558.0,
+        "peak_met_mw": 15558.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 14895.0,
+        "peak_met_mw": 14895.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 10156.0,
+        "peak_met_mw": 10156.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 9621.0,
+        "peak_met_mw": 9621.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 8822.0,
+        "peak_met_mw": 8822.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 11018.0,
+        "peak_met_mw": 11018.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 16170.0,
+        "peak_met_mw": 16170.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Himachal_Pradesh": {
+      "2026-05": {
+        "peak_demand_mw": 1836.0,
+        "peak_met_mw": 1836.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 1913.0,
+        "peak_met_mw": 1913.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 1832.0,
+        "peak_met_mw": 1832.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 2310.0,
+        "peak_met_mw": 2310.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 2228.0,
+        "peak_met_mw": 2228.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 2060.0,
+        "peak_met_mw": 2060.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 1839.0,
+        "peak_met_mw": 1839.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 1843.0,
+        "peak_met_mw": 1843.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "JK_Ladakh": {
+      "2026-05": {
+        "peak_demand_mw": 3063.0,
+        "peak_met_mw": 3063.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 2795.0,
+        "peak_met_mw": 2724.0,
+        "demand_not_met_mw": 71.0,
+        "demand_not_met_pct": 2.5,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 2672.0,
+        "peak_met_mw": 2672.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 3325.0,
+        "peak_met_mw": 3325.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 3097.0,
+        "peak_met_mw": 3097.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 3242.0,
+        "peak_met_mw": 3242.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 2715.0,
+        "peak_met_mw": 2715.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 2984.0,
+        "peak_met_mw": 2984.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Punjab": {
+      "2026-05": {
+        "peak_demand_mw": 14268.0,
+        "peak_met_mw": 14268.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 17672.0,
+        "peak_met_mw": 17017.0,
+        "demand_not_met_mw": 655.0,
+        "demand_not_met_pct": 3.7,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 16794.0,
+        "peak_met_mw": 16244.0,
+        "demand_not_met_mw": 550.0,
+        "demand_not_met_pct": 3.3,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 10661.0,
+        "peak_met_mw": 10661.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 10999.0,
+        "peak_met_mw": 10999.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 11127.0,
+        "peak_met_mw": 11127.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 11863.0,
+        "peak_met_mw": 11863.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 17221.0,
+        "peak_met_mw": 17221.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Rajasthan": {
+      "2026-05": {
+        "peak_demand_mw": 17333.0,
+        "peak_met_mw": 17333.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 17672.0,
+        "peak_met_mw": 17672.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 16881.0,
+        "peak_met_mw": 16881.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 19617.0,
+        "peak_met_mw": 19617.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 19037.0,
+        "peak_met_mw": 19037.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 17264.0,
+        "peak_met_mw": 17264.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 14825.0,
+        "peak_met_mw": 14825.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 18164.0,
+        "peak_met_mw": 18164.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Uttar_Pradesh": {
+      "2026-05": {
+        "peak_demand_mw": 31824.0,
+        "peak_met_mw": 31824.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 33197.0,
+        "peak_met_mw": 32673.0,
+        "demand_not_met_mw": 524.0,
+        "demand_not_met_pct": 1.6,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 31486.0,
+        "peak_met_mw": 31296.0,
+        "demand_not_met_mw": 190.0,
+        "demand_not_met_pct": 0.6,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 23976.0,
+        "peak_met_mw": 23716.0,
+        "demand_not_met_mw": 260.0,
+        "demand_not_met_pct": 1.1,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 21000.0,
+        "peak_met_mw": 21000.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 22314.0,
+        "peak_met_mw": 22314.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 29932.0,
+        "peak_met_mw": 29475.0,
+        "demand_not_met_mw": 457.0,
+        "demand_not_met_pct": 1.5,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 32732.0,
+        "peak_met_mw": 32510.0,
+        "demand_not_met_mw": 222.0,
+        "demand_not_met_pct": 0.7,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Uttarakhand": {
+      "2026-05": {
+        "peak_demand_mw": 2982.0,
+        "peak_met_mw": 2982.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 3078.0,
+        "peak_met_mw": 3063.0,
+        "demand_not_met_mw": 15.0,
+        "demand_not_met_pct": 0.5,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 2879.0,
+        "peak_met_mw": 2499.0,
+        "demand_not_met_mw": 380.0,
+        "demand_not_met_pct": 13.2,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 2766.0,
+        "peak_met_mw": 2766.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 2594.0,
+        "peak_met_mw": 2594.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 2315.0,
+        "peak_met_mw": 2315.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 2691.0,
+        "peak_met_mw": 2536.0,
+        "demand_not_met_mw": 155.0,
+        "demand_not_met_pct": 5.8,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 2976.0,
+        "peak_met_mw": 2821.0,
+        "demand_not_met_mw": 155.0,
+        "demand_not_met_pct": 5.2,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Chhattisgarh": {
+      "2026-05": {
+        "peak_demand_mw": 6471.0,
+        "peak_met_mw": 6471.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 5990.0,
+        "peak_met_mw": 5990.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 6023.0,
+        "peak_met_mw": 6008.0,
+        "demand_not_met_mw": 15.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 5849.0,
+        "peak_met_mw": 5849.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 6282.0,
+        "peak_met_mw": 6275.0,
+        "demand_not_met_mw": 7.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 6621.0,
+        "peak_met_mw": 6621.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 7080.0,
+        "peak_met_mw": 7078.0,
+        "demand_not_met_mw": 2.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 6730.0,
+        "peak_met_mw": 6122.0,
+        "demand_not_met_mw": 608.0,
+        "demand_not_met_pct": 9.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Gujarat": {
+      "2026-05": {
+        "peak_demand_mw": 26455.0,
+        "peak_met_mw": 26418.0,
+        "demand_not_met_mw": 37.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 28853.0,
+        "peak_met_mw": 28833.0,
+        "demand_not_met_mw": 20.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 28400.0,
+        "peak_met_mw": 28390.0,
+        "demand_not_met_mw": 10.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 25495.0,
+        "peak_met_mw": 25495.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 24764.0,
+        "peak_met_mw": 24764.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 23843.0,
+        "peak_met_mw": 23843.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 25795.0,
+        "peak_met_mw": 25786.0,
+        "demand_not_met_mw": 9.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 25611.0,
+        "peak_met_mw": 25611.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Madhya_Pradesh": {
+      "2026-05": {
+        "peak_demand_mw": 15519.0,
+        "peak_met_mw": 15492.0,
+        "demand_not_met_mw": 27.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 13441.0,
+        "peak_met_mw": 13432.0,
+        "demand_not_met_mw": 9.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 13390.0,
+        "peak_met_mw": 13390.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 19902.0,
+        "peak_met_mw": 19895.0,
+        "demand_not_met_mw": 7.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 19221.0,
+        "peak_met_mw": 19187.0,
+        "demand_not_met_mw": 34.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 16965.0,
+        "peak_met_mw": 16953.0,
+        "demand_not_met_mw": 12.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 14375.0,
+        "peak_met_mw": 14375.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 13818.0,
+        "peak_met_mw": 13818.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Maharashtra": {
+      "2026-05": {
+        "peak_demand_mw": 32430.0,
+        "peak_met_mw": 32317.0,
+        "demand_not_met_mw": 113.0,
+        "demand_not_met_pct": 0.3,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 31273.0,
+        "peak_met_mw": 31273.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 29497.0,
+        "peak_met_mw": 29477.0,
+        "demand_not_met_mw": 20.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 30782.0,
+        "peak_met_mw": 30782.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 30630.0,
+        "peak_met_mw": 30630.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 31128.0,
+        "peak_met_mw": 31128.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 32161.0,
+        "peak_met_mw": 32161.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 28861.0,
+        "peak_met_mw": 28750.0,
+        "demand_not_met_mw": 111.0,
+        "demand_not_met_pct": 0.4,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "DNH_DD": {
+      "2026-05": {
+        "peak_demand_mw": 1358.0,
+        "peak_met_mw": 1358.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 1427.0,
+        "peak_met_mw": 1427.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 1425.0,
+        "peak_met_mw": 1425.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 1389.0,
+        "peak_met_mw": 1389.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 1416.0,
+        "peak_met_mw": 1416.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 1391.0,
+        "peak_met_mw": 1391.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 1284.0,
+        "peak_met_mw": 1284.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 1390.0,
+        "peak_met_mw": 1390.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Goa": {
+      "2026-05": {
+        "peak_demand_mw": 875.0,
+        "peak_met_mw": 875.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 835.0,
+        "peak_met_mw": 835.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 856.0,
+        "peak_met_mw": 854.0,
+        "demand_not_met_mw": 2.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 756.0,
+        "peak_met_mw": 755.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 782.0,
+        "peak_met_mw": 782.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 838.0,
+        "peak_met_mw": 838.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 891.0,
+        "peak_met_mw": 891.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 792.0,
+        "peak_met_mw": 791.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Andhra_Pradesh": {
+      "2026-05": {
+        "peak_demand_mw": 15019.0,
+        "peak_met_mw": 15014.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 13935.0,
+        "peak_met_mw": 13935.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 13967.0,
+        "peak_met_mw": 13957.0,
+        "demand_not_met_mw": 10.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 12622.0,
+        "peak_met_mw": 12622.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 13511.0,
+        "peak_met_mw": 13510.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 14005.0,
+        "peak_met_mw": 14005.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 14145.0,
+        "peak_met_mw": 14145.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 14425.0,
+        "peak_met_mw": 14421.0,
+        "demand_not_met_mw": 4.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Telangana": {
+      "2026-05": {
+        "peak_demand_mw": 12717.0,
+        "peak_met_mw": 12706.0,
+        "demand_not_met_mw": 11.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 12685.0,
+        "peak_met_mw": 12685.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 17291.0,
+        "peak_met_mw": 17288.0,
+        "demand_not_met_mw": 3.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 16048.0,
+        "peak_met_mw": 16048.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 17083.0,
+        "peak_met_mw": 17083.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 18548.0,
+        "peak_met_mw": 18548.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 17005.0,
+        "peak_met_mw": 17002.0,
+        "demand_not_met_mw": 3.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 16658.0,
+        "peak_met_mw": 16650.0,
+        "demand_not_met_mw": 8.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Karnataka": {
+      "2026-05": {
+        "peak_demand_mw": 17695.0,
+        "peak_met_mw": 17682.0,
+        "demand_not_met_mw": 13.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 16357.0,
+        "peak_met_mw": 16357.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 16894.0,
+        "peak_met_mw": 16894.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 17700.0,
+        "peak_met_mw": 17700.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 18206.0,
+        "peak_met_mw": 18206.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 18655.0,
+        "peak_met_mw": 18655.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 18488.0,
+        "peak_met_mw": 18478.0,
+        "demand_not_met_mw": 10.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 18514.0,
+        "peak_met_mw": 18478.0,
+        "demand_not_met_mw": 36.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Kerala": {
+      "2026-05": {
+        "peak_demand_mw": 5742.0,
+        "peak_met_mw": 5742.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 5473.0,
+        "peak_met_mw": 5472.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 4913.0,
+        "peak_met_mw": 4861.0,
+        "demand_not_met_mw": 52.0,
+        "demand_not_met_pct": 1.1,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 4768.0,
+        "peak_met_mw": 4767.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 5099.0,
+        "peak_met_mw": 5099.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 5819.0,
+        "peak_met_mw": 5819.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 6488.0,
+        "peak_met_mw": 6178.0,
+        "demand_not_met_mw": 310.0,
+        "demand_not_met_pct": 4.8,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 5348.0,
+        "peak_met_mw": 4820.0,
+        "demand_not_met_mw": 528.0,
+        "demand_not_met_pct": 9.9,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Tamil_Nadu": {
+      "2026-05": {
+        "peak_demand_mw": 19425.0,
+        "peak_met_mw": 19425.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 20664.0,
+        "peak_met_mw": 20664.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 20721.0,
+        "peak_met_mw": 20721.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 17348.0,
+        "peak_met_mw": 17325.0,
+        "demand_not_met_mw": 23.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 18949.0,
+        "peak_met_mw": 18949.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 19932.0,
+        "peak_met_mw": 19932.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 21000.0,
+        "peak_met_mw": 21000.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 21471.0,
+        "peak_met_mw": 21402.0,
+        "demand_not_met_mw": 69.0,
+        "demand_not_met_pct": 0.3,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Puducherry": {
+      "2026-05": {
+        "peak_demand_mw": 577.0,
+        "peak_met_mw": 577.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 584.0,
+        "peak_met_mw": 579.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 0.9,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 551.0,
+        "peak_met_mw": 551.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 481.0,
+        "peak_met_mw": 481.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 465.0,
+        "peak_met_mw": 465.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 488.0,
+        "peak_met_mw": 488.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 568.0,
+        "peak_met_mw": 568.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 587.0,
+        "peak_met_mw": 587.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Lakshadweep": {
+      "2026-05": {
+        "peak_demand_mw": 14.0,
+        "peak_met_mw": 14.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 13.0,
+        "peak_met_mw": 13.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 13.0,
+        "peak_met_mw": 13.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 13.0,
+        "peak_met_mw": 13.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 13.0,
+        "peak_met_mw": 13.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 14.0,
+        "peak_met_mw": 14.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 14.0,
+        "peak_met_mw": 14.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 13.0,
+        "peak_met_mw": 13.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Bihar": {
+      "2026-05": {
+        "peak_demand_mw": 8646.0,
+        "peak_met_mw": 8628.0,
+        "demand_not_met_mw": 18.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 8917.0,
+        "peak_met_mw": 8917.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 9591.0,
+        "peak_met_mw": 9578.0,
+        "demand_not_met_mw": 13.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 6535.0,
+        "peak_met_mw": 6527.0,
+        "demand_not_met_mw": 8.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 5904.0,
+        "peak_met_mw": 5904.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 6821.0,
+        "peak_met_mw": 6808.0,
+        "demand_not_met_mw": 13.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 8172.0,
+        "peak_met_mw": 8158.0,
+        "demand_not_met_mw": 14.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 9475.0,
+        "peak_met_mw": 9475.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "DVC": {
+      "2026-05": {
+        "peak_demand_mw": 3431.0,
+        "peak_met_mw": 3427.0,
+        "demand_not_met_mw": 4.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 3468.0,
+        "peak_met_mw": 3463.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 3442.0,
+        "peak_met_mw": 3442.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 3532.0,
+        "peak_met_mw": 3523.0,
+        "demand_not_met_mw": 9.0,
+        "demand_not_met_pct": 0.3,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 3317.0,
+        "peak_met_mw": 3317.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 3329.0,
+        "peak_met_mw": 3323.0,
+        "demand_not_met_mw": 6.0,
+        "demand_not_met_pct": 0.2,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 3676.0,
+        "peak_met_mw": 3676.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 3463.0,
+        "peak_met_mw": 3463.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Jharkhand": {
+      "2026-05": {
+        "peak_demand_mw": 2589.0,
+        "peak_met_mw": 2589.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 2544.0,
+        "peak_met_mw": 2544.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 2567.0,
+        "peak_met_mw": 2567.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 2255.0,
+        "peak_met_mw": 2255.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 2158.0,
+        "peak_met_mw": 2158.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 2353.0,
+        "peak_met_mw": 2350.0,
+        "demand_not_met_mw": 3.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 2409.0,
+        "peak_met_mw": 2409.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 2622.0,
+        "peak_met_mw": 2622.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Odisha": {
+      "2026-05": {
+        "peak_demand_mw": 8829.0,
+        "peak_met_mw": 8823.0,
+        "demand_not_met_mw": 6.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 7611.0,
+        "peak_met_mw": 7611.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 7347.0,
+        "peak_met_mw": 7347.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 5500.0,
+        "peak_met_mw": 5483.0,
+        "demand_not_met_mw": 17.0,
+        "demand_not_met_pct": 0.3,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 5593.0,
+        "peak_met_mw": 5593.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 6703.0,
+        "peak_met_mw": 6702.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 7598.0,
+        "peak_met_mw": 7594.0,
+        "demand_not_met_mw": 4.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 8012.0,
+        "peak_met_mw": 8012.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "West_Bengal": {
+      "2026-05": {
+        "peak_demand_mw": 13340.0,
+        "peak_met_mw": 13340.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 13570.0,
+        "peak_met_mw": 13570.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 12695.0,
+        "peak_met_mw": 12695.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 8252.0,
+        "peak_met_mw": 8251.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 8694.0,
+        "peak_met_mw": 8693.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 10321.0,
+        "peak_met_mw": 10321.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 13023.0,
+        "peak_met_mw": 12946.0,
+        "demand_not_met_mw": 77.0,
+        "demand_not_met_pct": 0.6,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 12324.0,
+        "peak_met_mw": 12324.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Sikkim": {
+      "2026-05": {
+        "peak_demand_mw": 100.0,
+        "peak_met_mw": 100.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 101.0,
+        "peak_met_mw": 101.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 96.0,
+        "peak_met_mw": 96.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 126.0,
+        "peak_met_mw": 126.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 125.0,
+        "peak_met_mw": 124.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.8,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 114.0,
+        "peak_met_mw": 114.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 118.0,
+        "peak_met_mw": 118.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 89.0,
+        "peak_met_mw": 89.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Andaman_Nicobar": {
+      "2026-05": {
+        "peak_demand_mw": 70.0,
+        "peak_met_mw": 65.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 7.1,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 67.0,
+        "peak_met_mw": 67.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 67.0,
+        "peak_met_mw": 67.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 66.0,
+        "peak_met_mw": 60.0,
+        "demand_not_met_mw": 6.0,
+        "demand_not_met_pct": 9.1,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 65.0,
+        "peak_met_mw": 60.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 7.7,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 65.0,
+        "peak_met_mw": 60.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 7.7,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 73.0,
+        "peak_met_mw": 67.0,
+        "demand_not_met_mw": 6.0,
+        "demand_not_met_pct": 8.2,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 67.0,
+        "peak_met_mw": 67.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Arunachal_Pradesh": {
+      "2026-05": {
+        "peak_demand_mw": 184.0,
+        "peak_met_mw": 184.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 202.0,
+        "peak_met_mw": 202.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 207.0,
+        "peak_met_mw": 207.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 190.0,
+        "peak_met_mw": 190.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 194.0,
+        "peak_met_mw": 194.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 186.0,
+        "peak_met_mw": 186.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 195.0,
+        "peak_met_mw": 195.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 202.0,
+        "peak_met_mw": 202.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Assam": {
+      "2026-05": {
+        "peak_demand_mw": 2495.0,
+        "peak_met_mw": 2495.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 2680.0,
+        "peak_met_mw": 2658.0,
+        "demand_not_met_mw": 22.0,
+        "demand_not_met_pct": 0.8,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 2948.0,
+        "peak_met_mw": 2948.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 1635.0,
+        "peak_met_mw": 1634.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.1,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 1775.0,
+        "peak_met_mw": 1775.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 1888.0,
+        "peak_met_mw": 1888.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 2315.0,
+        "peak_met_mw": 2287.0,
+        "demand_not_met_mw": 28.0,
+        "demand_not_met_pct": 1.2,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 2743.0,
+        "peak_met_mw": 2733.0,
+        "demand_not_met_mw": 10.0,
+        "demand_not_met_pct": 0.4,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Manipur": {
+      "2026-05": {
+        "peak_demand_mw": 261.0,
+        "peak_met_mw": 261.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 264.0,
+        "peak_met_mw": 264.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 276.0,
+        "peak_met_mw": 276.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 277.0,
+        "peak_met_mw": 277.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 273.0,
+        "peak_met_mw": 273.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 252.0,
+        "peak_met_mw": 252.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 252.0,
+        "peak_met_mw": 252.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 260.0,
+        "peak_met_mw": 260.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Meghalaya": {
+      "2026-05": {
+        "peak_demand_mw": 368.0,
+        "peak_met_mw": 368.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 366.0,
+        "peak_met_mw": 366.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 385.0,
+        "peak_met_mw": 385.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 374.0,
+        "peak_met_mw": 374.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 368.0,
+        "peak_met_mw": 368.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 359.0,
+        "peak_met_mw": 359.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 364.0,
+        "peak_met_mw": 363.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.3,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 375.0,
+        "peak_met_mw": 375.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Mizoram": {
+      "2026-05": {
+        "peak_demand_mw": 153.0,
+        "peak_met_mw": 153.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 155.0,
+        "peak_met_mw": 155.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 153.0,
+        "peak_met_mw": 152.0,
+        "demand_not_met_mw": 1.0,
+        "demand_not_met_pct": 0.7,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 182.0,
+        "peak_met_mw": 182.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 156.0,
+        "peak_met_mw": 156.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 148.0,
+        "peak_met_mw": 148.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 151.0,
+        "peak_met_mw": 151.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 151.0,
+        "peak_met_mw": 151.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Nagaland": {
+      "2026-05": {
+        "peak_demand_mw": 191.0,
+        "peak_met_mw": 191.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 204.0,
+        "peak_met_mw": 204.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 210.0,
+        "peak_met_mw": 206.0,
+        "demand_not_met_mw": 4.0,
+        "demand_not_met_pct": 1.9,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 177.0,
+        "peak_met_mw": 177.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 193.0,
+        "peak_met_mw": 179.0,
+        "demand_not_met_mw": 14.0,
+        "demand_not_met_pct": 7.2,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 175.0,
+        "peak_met_mw": 168.0,
+        "demand_not_met_mw": 7.0,
+        "demand_not_met_pct": 4.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 174.0,
+        "peak_met_mw": 174.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 208.0,
+        "peak_met_mw": 203.0,
+        "demand_not_met_mw": 5.0,
+        "demand_not_met_pct": 2.4,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    },
+    "Tripura": {
+      "2026-05": {
+        "peak_demand_mw": 355.0,
+        "peak_met_mw": 355.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "May, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10814.pdf"
+      },
+      "2026-06": {
+        "peak_demand_mw": 366.0,
+        "peak_met_mw": 366.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "June, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_10819.pdf"
+      },
+      "2026-08": {
+        "peak_demand_mw": 371.0,
+        "peak_met_mw": 371.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "August, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_11071.pdf"
+      },
+      "2026-01": {
+        "peak_demand_mw": 237.0,
+        "peak_met_mw": 237.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "January, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6776.pdf"
+      },
+      "2026-02": {
+        "peak_demand_mw": 246.0,
+        "peak_met_mw": 246.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "February, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6778.pdf"
+      },
+      "2026-03": {
+        "peak_demand_mw": 289.0,
+        "peak_met_mw": 289.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "March, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6780.pdf"
+      },
+      "2026-04": {
+        "peak_demand_mw": 366.0,
+        "peak_met_mw": 366.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "April, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_6782.pdf"
+      },
+      "2026-07": {
+        "peak_demand_mw": 372.0,
+        "peak_met_mw": 372.0,
+        "demand_not_met_mw": 0.0,
+        "demand_not_met_pct": 0.0,
+        "month_label": "July, 2026",
+        "source_file": "Power_Supply_Position_-_Peak_954.pdf"
+      }
+    }
+  },
+  "notes": [
+    "CEA Note 1: MW figures are net values rounded to the nearest integer MW from State Utilities / Electricity Departments.",
+    "CEA Note 2 (##): Regional figures include miscellaneous entities drawing power directly from ISTS.",
+    "CEA Note 3: Peak Met is matched (clipped) to Peak Demand whenever available supply exceeds Peak Demand.",
+    "CEA Note 4 (**): Andaman & Nicobar Islands carried forward prior month values in Mar-2026, Jul-2026, and Aug-2026 due to non-receipt."
+  ]
+}
