@@ -1,0 +1,38 @@
+# Virtual Environments & Python
+.venv/
+env/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Large Raw Datasets
+data/raw/
+data_sets/
+*.pdf
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+frontend/build/
+.npm
+*.log
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Ensure processed datasets & scripts are tracked for teammate
+!data/processed/
+!data/processed/**
+!data/scripts/
+!data/scripts/**
+!frontend/
+!frontend/**

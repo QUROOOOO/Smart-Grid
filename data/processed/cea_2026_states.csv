@@ -1,0 +1,297 @@
+state,region,month,peak_demand_mw,peak_met_mw,deficit_mw,deficit_pct
+Chandigarh,Northern,2026-05,411.0,411.0,0.0,0.0
+Delhi,Northern,2026-05,8439.0,8439.0,0.0,0.0
+Haryana,Northern,2026-05,13507.0,13507.0,0.0,0.0
+Himachal Pradesh,Northern,2026-05,1836.0,1836.0,0.0,0.0
+UT of J&K and Ladakh,Northern,2026-05,3063.0,3063.0,0.0,0.0
+Punjab,Northern,2026-05,14268.0,14268.0,0.0,0.0
+Rajasthan,Northern,2026-05,17333.0,17333.0,0.0,0.0
+Uttar Pradesh,Northern,2026-05,31824.0,31824.0,0.0,0.0
+Uttarakhand,Northern,2026-05,2982.0,2982.0,0.0,0.0
+Chhattisgarh,Western,2026-05,6471.0,6471.0,0.0,0.0
+Gujarat,Western,2026-05,26455.0,26418.0,37.0,0.1
+Madhya Pradesh,Western,2026-05,15519.0,15492.0,27.0,0.2
+Maharashtra,Western,2026-05,32430.0,32317.0,113.0,0.3
+Dadra and Nagar Haveli and Daman and Diu,Western,2026-05,1358.0,1358.0,0.0,0.0
+Goa,Western,2026-05,875.0,875.0,0.0,0.0
+Andhra Pradesh,Southern,2026-05,15019.0,15014.0,5.0,0.0
+Telangana,Southern,2026-05,12717.0,12706.0,11.0,0.1
+Karnataka,Southern,2026-05,17695.0,17682.0,13.0,0.1
+Kerala,Southern,2026-05,5742.0,5742.0,0.0,0.0
+Tamil Nadu,Southern,2026-05,19425.0,19425.0,0.0,0.0
+Puducherry,Southern,2026-05,577.0,577.0,0.0,0.0
+Lakshadweep,Southern,2026-05,14.0,14.0,0.0,0.0
+Bihar,Eastern,2026-05,8646.0,8628.0,18.0,0.2
+DVC,Eastern,2026-05,3431.0,3427.0,4.0,0.1
+Jharkhand,Eastern,2026-05,2589.0,2589.0,0.0,0.0
+Odisha,Eastern,2026-05,8829.0,8823.0,6.0,0.1
+West Bengal,Eastern,2026-05,13340.0,13340.0,0.0,0.0
+Sikkim,Eastern,2026-05,100.0,100.0,0.0,0.0
+Andaman and Nicobar,Eastern,2026-05,70.0,65.0,5.0,7.1
+Arunachal Pradesh,North-Eastern,2026-05,184.0,184.0,0.0,0.0
+Assam,North-Eastern,2026-05,2495.0,2495.0,0.0,0.0
+Manipur,North-Eastern,2026-05,261.0,261.0,0.0,0.0
+Meghalaya,North-Eastern,2026-05,368.0,368.0,0.0,0.0
+Mizoram,North-Eastern,2026-05,153.0,153.0,0.0,0.0
+Nagaland,North-Eastern,2026-05,191.0,191.0,0.0,0.0
+Tripura,North-Eastern,2026-05,355.0,355.0,0.0,0.0
+All India,All India,2026-05,270832.0,270820.0,12.0,0.0
+Chandigarh,Northern,2026-06,456.0,456.0,0.0,0.0
+Delhi,Northern,2026-06,8439.0,8439.0,0.0,0.0
+Haryana,Northern,2026-06,15558.0,15558.0,0.0,0.0
+Himachal Pradesh,Northern,2026-06,1913.0,1913.0,0.0,0.0
+UT of J&K and Ladakh,Northern,2026-06,2795.0,2724.0,71.0,2.5
+Punjab,Northern,2026-06,17672.0,17017.0,655.0,3.7
+Rajasthan,Northern,2026-06,17672.0,17672.0,0.0,0.0
+Uttar Pradesh,Northern,2026-06,33197.0,32673.0,524.0,1.6
+Uttarakhand,Northern,2026-06,3078.0,3063.0,15.0,0.5
+Chhattisgarh,Western,2026-06,5990.0,5990.0,0.0,0.0
+Gujarat,Western,2026-06,28853.0,28833.0,20.0,0.1
+Madhya Pradesh,Western,2026-06,13441.0,13432.0,9.0,0.1
+Maharashtra,Western,2026-06,31273.0,31273.0,0.0,0.0
+Dadra and Nagar Haveli and Daman and Diu,Western,2026-06,1427.0,1427.0,0.0,0.0
+Goa,Western,2026-06,835.0,835.0,0.0,0.0
+Andhra Pradesh,Southern,2026-06,13935.0,13935.0,0.0,0.0
+Telangana,Southern,2026-06,12685.0,12685.0,0.0,0.0
+Karnataka,Southern,2026-06,16357.0,16357.0,0.0,0.0
+Kerala,Southern,2026-06,5473.0,5472.0,1.0,0.0
+Tamil Nadu,Southern,2026-06,20664.0,20664.0,0.0,0.0
+Puducherry,Southern,2026-06,584.0,579.0,5.0,0.9
+Lakshadweep,Southern,2026-06,13.0,13.0,0.0,0.0
+Bihar,Eastern,2026-06,8917.0,8917.0,0.0,0.0
+DVC,Eastern,2026-06,3468.0,3463.0,5.0,0.1
+Jharkhand,Eastern,2026-06,2544.0,2544.0,0.0,0.0
+Odisha,Eastern,2026-06,7611.0,7611.0,0.0,0.0
+West Bengal,Eastern,2026-06,13570.0,13570.0,0.0,0.0
+Sikkim,Eastern,2026-06,101.0,101.0,0.0,0.0
+Andaman and Nicobar,Eastern,2026-06,67.0,67.0,0.0,0.0
+Arunachal Pradesh,North-Eastern,2026-06,202.0,202.0,0.0,0.0
+Assam,North-Eastern,2026-06,2680.0,2658.0,22.0,0.8
+Manipur,North-Eastern,2026-06,264.0,264.0,0.0,0.0
+Meghalaya,North-Eastern,2026-06,366.0,366.0,0.0,0.0
+Mizoram,North-Eastern,2026-06,155.0,155.0,0.0,0.0
+Nagaland,North-Eastern,2026-06,204.0,204.0,0.0,0.0
+Tripura,North-Eastern,2026-06,366.0,366.0,0.0,0.0
+All India,All India,2026-06,264768.0,264768.0,0.0,0.0
+Chandigarh,Northern,2026-08,421.0,421.0,0.0,0.0
+Delhi,Northern,2026-08,7660.0,7658.0,2.0,0.0
+Haryana,Northern,2026-08,14895.0,14895.0,0.0,0.0
+Himachal Pradesh,Northern,2026-08,1832.0,1832.0,0.0,0.0
+UT of J&K and Ladakh,Northern,2026-08,2672.0,2672.0,0.0,0.0
+Punjab,Northern,2026-08,16794.0,16244.0,550.0,3.3
+Rajasthan,Northern,2026-08,16881.0,16881.0,0.0,0.0
+Uttar Pradesh,Northern,2026-08,31486.0,31296.0,190.0,0.6
+Uttarakhand,Northern,2026-08,2879.0,2499.0,380.0,13.2
+Chhattisgarh,Western,2026-08,6023.0,6008.0,15.0,0.2
+Gujarat,Western,2026-08,28400.0,28390.0,10.0,0.0
+Madhya Pradesh,Western,2026-08,13390.0,13390.0,0.0,0.0
+Maharashtra,Western,2026-08,29497.0,29477.0,20.0,0.1
+Dadra and Nagar Haveli and Daman and Diu,Western,2026-08,1425.0,1425.0,0.0,0.0
+Goa,Western,2026-08,856.0,854.0,2.0,0.2
+Andhra Pradesh,Southern,2026-08,13967.0,13957.0,10.0,0.1
+Telangana,Southern,2026-08,17291.0,17288.0,3.0,0.0
+Karnataka,Southern,2026-08,16894.0,16894.0,0.0,0.0
+Kerala,Southern,2026-08,4913.0,4861.0,52.0,1.1
+Tamil Nadu,Southern,2026-08,20721.0,20721.0,0.0,0.0
+Puducherry,Southern,2026-08,551.0,551.0,0.0,0.0
+Lakshadweep,Southern,2026-08,13.0,13.0,0.0,0.0
+Bihar,Eastern,2026-08,9591.0,9578.0,13.0,0.1
+DVC,Eastern,2026-08,3442.0,3442.0,0.0,0.0
+Jharkhand,Eastern,2026-08,2567.0,2567.0,0.0,0.0
+Odisha,Eastern,2026-08,7347.0,7347.0,0.0,0.0
+West Bengal,Eastern,2026-08,12695.0,12695.0,0.0,0.0
+Sikkim,Eastern,2026-08,96.0,96.0,0.0,0.0
+Andaman and Nicobar,Eastern,2026-08,67.0,67.0,0.0,0.0
+Arunachal Pradesh,North-Eastern,2026-08,207.0,207.0,0.0,0.0
+Assam,North-Eastern,2026-08,2948.0,2948.0,0.0,0.0
+Manipur,North-Eastern,2026-08,276.0,276.0,0.0,0.0
+Meghalaya,North-Eastern,2026-08,385.0,385.0,0.0,0.0
+Mizoram,North-Eastern,2026-08,153.0,152.0,1.0,0.7
+Nagaland,North-Eastern,2026-08,210.0,206.0,4.0,1.9
+Tripura,North-Eastern,2026-08,371.0,371.0,0.0,0.0
+All India,All India,2026-08,258276.0,258270.0,6.0,0.0
+Chandigarh,Northern,2026-01,340.0,340.0,0.0,0.0
+Delhi,Northern,2026-01,6087.0,6087.0,0.0,0.0
+Haryana,Northern,2026-01,10156.0,10156.0,0.0,0.0
+Himachal Pradesh,Northern,2026-01,2310.0,2310.0,0.0,0.0
+UT of J&K and Ladakh,Northern,2026-01,3325.0,3325.0,0.0,0.0
+Punjab,Northern,2026-01,10661.0,10661.0,0.0,0.0
+Rajasthan,Northern,2026-01,19617.0,19617.0,0.0,0.0
+Uttar Pradesh,Northern,2026-01,23976.0,23716.0,260.0,1.1
+Uttarakhand,Northern,2026-01,2766.0,2766.0,0.0,0.0
+Chhattisgarh,Western,2026-01,5849.0,5849.0,0.0,0.0
+Gujarat,Western,2026-01,25495.0,25495.0,0.0,0.0
+Madhya Pradesh,Western,2026-01,19902.0,19895.0,7.0,0.0
+Maharashtra,Western,2026-01,30782.0,30782.0,0.0,0.0
+Dadra and Nagar Haveli and Daman and Diu,Western,2026-01,1389.0,1389.0,0.0,0.0
+Goa,Western,2026-01,756.0,755.0,1.0,0.1
+Andhra Pradesh,Southern,2026-01,12622.0,12622.0,0.0,0.0
+Telangana,Southern,2026-01,16048.0,16048.0,0.0,0.0
+Karnataka,Southern,2026-01,17700.0,17700.0,0.0,0.0
+Kerala,Southern,2026-01,4768.0,4767.0,1.0,0.0
+Tamil Nadu,Southern,2026-01,17348.0,17325.0,23.0,0.1
+Puducherry,Southern,2026-01,481.0,481.0,0.0,0.0
+Lakshadweep,Southern,2026-01,13.0,13.0,0.0,0.0
+Bihar,Eastern,2026-01,6535.0,6527.0,8.0,0.1
+DVC,Eastern,2026-01,3532.0,3523.0,9.0,0.3
+Jharkhand,Eastern,2026-01,2255.0,2255.0,0.0,0.0
+Odisha,Eastern,2026-01,5500.0,5483.0,17.0,0.3
+West Bengal,Eastern,2026-01,8252.0,8251.0,1.0,0.0
+Sikkim,Eastern,2026-01,126.0,126.0,0.0,0.0
+Andaman and Nicobar,Eastern,2026-01,66.0,60.0,6.0,9.1
+Arunachal Pradesh,North-Eastern,2026-01,190.0,190.0,0.0,0.0
+Assam,North-Eastern,2026-01,1635.0,1634.0,1.0,0.1
+Manipur,North-Eastern,2026-01,277.0,277.0,0.0,0.0
+Meghalaya,North-Eastern,2026-01,374.0,374.0,0.0,0.0
+Mizoram,North-Eastern,2026-01,182.0,182.0,0.0,0.0
+Nagaland,North-Eastern,2026-01,177.0,177.0,0.0,0.0
+Tripura,North-Eastern,2026-01,237.0,237.0,0.0,0.0
+All India,All India,2026-01,245444.0,245416.0,28.0,0.0
+Chandigarh,Northern,2026-02,277.0,277.0,0.0,0.0
+Delhi,Northern,2026-02,5452.0,5452.0,0.0,0.0
+Haryana,Northern,2026-02,9621.0,9621.0,0.0,0.0
+Himachal Pradesh,Northern,2026-02,2228.0,2228.0,0.0,0.0
+UT of J&K and Ladakh,Northern,2026-02,3097.0,3097.0,0.0,0.0
+Punjab,Northern,2026-02,10999.0,10999.0,0.0,0.0
+Rajasthan,Northern,2026-02,19037.0,19037.0,0.0,0.0
+Uttar Pradesh,Northern,2026-02,21000.0,21000.0,0.0,0.0
+Uttarakhand,Northern,2026-02,2594.0,2594.0,0.0,0.0
+Chhattisgarh,Western,2026-02,6282.0,6275.0,7.0,0.1
+Gujarat,Western,2026-02,24764.0,24764.0,0.0,0.0
+Madhya Pradesh,Western,2026-02,19221.0,19187.0,34.0,0.2
+Maharashtra,Western,2026-02,30630.0,30630.0,0.0,0.0
+Dadra and Nagar Haveli and Daman and Diu,Western,2026-02,1416.0,1416.0,0.0,0.0
+Goa,Western,2026-02,782.0,782.0,0.0,0.0
+Andhra Pradesh,Southern,2026-02,13511.0,13510.0,1.0,0.0
+Telangana,Southern,2026-02,17083.0,17083.0,0.0,0.0
+Karnataka,Southern,2026-02,18206.0,18206.0,0.0,0.0
+Kerala,Southern,2026-02,5099.0,5099.0,0.0,0.0
+Tamil Nadu,Southern,2026-02,18949.0,18949.0,0.0,0.0
+Puducherry,Southern,2026-02,465.0,465.0,0.0,0.0
+Lakshadweep,Southern,2026-02,13.0,13.0,0.0,0.0
+Bihar,Eastern,2026-02,5904.0,5904.0,0.0,0.0
+DVC,Eastern,2026-02,3317.0,3317.0,0.0,0.0
+Jharkhand,Eastern,2026-02,2158.0,2158.0,0.0,0.0
+Odisha,Eastern,2026-02,5593.0,5593.0,0.0,0.0
+West Bengal,Eastern,2026-02,8694.0,8693.0,1.0,0.0
+Sikkim,Eastern,2026-02,125.0,124.0,1.0,0.8
+Andaman and Nicobar,Eastern,2026-02,65.0,60.0,5.0,7.7
+Arunachal Pradesh,North-Eastern,2026-02,194.0,194.0,0.0,0.0
+Assam,North-Eastern,2026-02,1775.0,1775.0,0.0,0.0
+Manipur,North-Eastern,2026-02,273.0,273.0,0.0,0.0
+Meghalaya,North-Eastern,2026-02,368.0,368.0,0.0,0.0
+Mizoram,North-Eastern,2026-02,156.0,156.0,0.0,0.0
+Nagaland,North-Eastern,2026-02,193.0,179.0,14.0,7.2
+Tripura,North-Eastern,2026-02,246.0,246.0,0.0,0.0
+All India,All India,2026-02,244209.0,244206.0,3.0,0.0
+Chandigarh,Northern,2026-03,228.0,228.0,0.0,0.0
+Delhi,Northern,2026-03,4592.0,4588.0,4.0,0.1
+Haryana,Northern,2026-03,8822.0,8822.0,0.0,0.0
+Himachal Pradesh,Northern,2026-03,2060.0,2060.0,0.0,0.0
+UT of J&K and Ladakh,Northern,2026-03,3242.0,3242.0,0.0,0.0
+Punjab,Northern,2026-03,11127.0,11127.0,0.0,0.0
+Rajasthan,Northern,2026-03,17264.0,17264.0,0.0,0.0
+Uttar Pradesh,Northern,2026-03,22314.0,22314.0,0.0,0.0
+Uttarakhand,Northern,2026-03,2315.0,2315.0,0.0,0.0
+Chhattisgarh,Western,2026-03,6621.0,6621.0,0.0,0.0
+Gujarat,Western,2026-03,23843.0,23843.0,0.0,0.0
+Madhya Pradesh,Western,2026-03,16965.0,16953.0,12.0,0.1
+Maharashtra,Western,2026-03,31128.0,31128.0,0.0,0.0
+Dadra and Nagar Haveli and Daman and Diu,Western,2026-03,1391.0,1391.0,0.0,0.0
+Goa,Western,2026-03,838.0,838.0,0.0,0.0
+Andhra Pradesh,Southern,2026-03,14005.0,14005.0,0.0,0.0
+Telangana,Southern,2026-03,18548.0,18548.0,0.0,0.0
+Karnataka,Southern,2026-03,18655.0,18655.0,0.0,0.0
+Kerala,Southern,2026-03,5819.0,5819.0,0.0,0.0
+Tamil Nadu,Southern,2026-03,19932.0,19932.0,0.0,0.0
+Puducherry,Southern,2026-03,488.0,488.0,0.0,0.0
+Lakshadweep,Southern,2026-03,14.0,14.0,0.0,0.0
+Bihar,Eastern,2026-03,6821.0,6808.0,13.0,0.2
+DVC,Eastern,2026-03,3329.0,3323.0,6.0,0.2
+Jharkhand,Eastern,2026-03,2353.0,2350.0,3.0,0.1
+Odisha,Eastern,2026-03,6703.0,6702.0,1.0,0.0
+West Bengal,Eastern,2026-03,10321.0,10321.0,0.0,0.0
+Sikkim,Eastern,2026-03,114.0,114.0,0.0,0.0
+Andaman and Nicobar,Eastern,2026-03,65.0,60.0,5.0,7.7
+Arunachal Pradesh,North-Eastern,2026-03,186.0,186.0,0.0,0.0
+Assam,North-Eastern,2026-03,1888.0,1888.0,0.0,0.0
+Manipur,North-Eastern,2026-03,252.0,252.0,0.0,0.0
+Meghalaya,North-Eastern,2026-03,359.0,359.0,0.0,0.0
+Mizoram,North-Eastern,2026-03,148.0,148.0,0.0,0.0
+Nagaland,North-Eastern,2026-03,175.0,168.0,7.0,4.0
+Tripura,North-Eastern,2026-03,289.0,289.0,0.0,0.0
+All India,All India,2026-03,238379.0,238378.0,1.0,0.0
+Chandigarh,Northern,2026-04,340.0,340.0,0.0,0.0
+Delhi,Northern,2026-04,7091.0,7091.0,0.0,0.0
+Haryana,Northern,2026-04,11018.0,11018.0,0.0,0.0
+Himachal Pradesh,Northern,2026-04,1839.0,1839.0,0.0,0.0
+UT of J&K and Ladakh,Northern,2026-04,2715.0,2715.0,0.0,0.0
+Punjab,Northern,2026-04,11863.0,11863.0,0.0,0.0
+Rajasthan,Northern,2026-04,14825.0,14825.0,0.0,0.0
+Uttar Pradesh,Northern,2026-04,29932.0,29475.0,457.0,1.5
+Uttarakhand,Northern,2026-04,2691.0,2536.0,155.0,5.8
+Chhattisgarh,Western,2026-04,7080.0,7078.0,2.0,0.0
+Gujarat,Western,2026-04,25795.0,25786.0,9.0,0.0
+Madhya Pradesh,Western,2026-04,14375.0,14375.0,0.0,0.0
+Maharashtra,Western,2026-04,32161.0,32161.0,0.0,0.0
+Dadra and Nagar Haveli and Daman and Diu,Western,2026-04,1284.0,1284.0,0.0,0.0
+Goa,Western,2026-04,891.0,891.0,0.0,0.0
+Andhra Pradesh,Southern,2026-04,14145.0,14145.0,0.0,0.0
+Telangana,Southern,2026-04,17005.0,17002.0,3.0,0.0
+Karnataka,Southern,2026-04,18488.0,18478.0,10.0,0.1
+Kerala,Southern,2026-04,6488.0,6178.0,310.0,4.8
+Tamil Nadu,Southern,2026-04,21000.0,21000.0,0.0,0.0
+Puducherry,Southern,2026-04,568.0,568.0,0.0,0.0
+Lakshadweep,Southern,2026-04,14.0,14.0,0.0,0.0
+Bihar,Eastern,2026-04,8172.0,8158.0,14.0,0.2
+DVC,Eastern,2026-04,3676.0,3676.0,0.0,0.0
+Jharkhand,Eastern,2026-04,2409.0,2409.0,0.0,0.0
+Odisha,Eastern,2026-04,7598.0,7594.0,4.0,0.1
+West Bengal,Eastern,2026-04,13023.0,12946.0,77.0,0.6
+Sikkim,Eastern,2026-04,118.0,118.0,0.0,0.0
+Andaman and Nicobar,Eastern,2026-04,73.0,67.0,6.0,8.2
+Arunachal Pradesh,North-Eastern,2026-04,195.0,195.0,0.0,0.0
+Assam,North-Eastern,2026-04,2315.0,2287.0,28.0,1.2
+Manipur,North-Eastern,2026-04,252.0,252.0,0.0,0.0
+Meghalaya,North-Eastern,2026-04,364.0,363.0,1.0,0.3
+Mizoram,North-Eastern,2026-04,151.0,151.0,0.0,0.0
+Nagaland,North-Eastern,2026-04,174.0,174.0,0.0,0.0
+Tripura,North-Eastern,2026-04,366.0,366.0,0.0,0.0
+All India,All India,2026-04,256117.0,256117.0,0.0,0.0
+Chandigarh,Northern,2026-07,447.0,447.0,0.0,0.0
+Delhi,Northern,2026-07,8491.0,8480.0,11.0,0.1
+Haryana,Northern,2026-07,16170.0,16170.0,0.0,0.0
+Himachal Pradesh,Northern,2026-07,1843.0,1843.0,0.0,0.0
+UT of J&K and Ladakh,Northern,2026-07,2984.0,2984.0,0.0,0.0
+Punjab,Northern,2026-07,17221.0,17221.0,0.0,0.0
+Rajasthan,Northern,2026-07,18164.0,18164.0,0.0,0.0
+Uttar Pradesh,Northern,2026-07,32732.0,32510.0,222.0,0.7
+Uttarakhand,Northern,2026-07,2976.0,2821.0,155.0,5.2
+Chhattisgarh,Western,2026-07,6730.0,6122.0,608.0,9.0
+Gujarat,Western,2026-07,25611.0,25611.0,0.0,0.0
+Madhya Pradesh,Western,2026-07,13818.0,13818.0,0.0,0.0
+Maharashtra,Western,2026-07,28861.0,28750.0,111.0,0.4
+Dadra and Nagar Haveli and Daman and Diu,Western,2026-07,1390.0,1390.0,0.0,0.0
+Goa,Western,2026-07,792.0,791.0,1.0,0.1
+Andhra Pradesh,Southern,2026-07,14425.0,14421.0,4.0,0.0
+Telangana,Southern,2026-07,16658.0,16650.0,8.0,0.0
+Karnataka,Southern,2026-07,18514.0,18478.0,36.0,0.2
+Kerala,Southern,2026-07,5348.0,4820.0,528.0,9.9
+Tamil Nadu,Southern,2026-07,21471.0,21402.0,69.0,0.3
+Puducherry,Southern,2026-07,587.0,587.0,0.0,0.0
+Lakshadweep,Southern,2026-07,13.0,13.0,0.0,0.0
+Bihar,Eastern,2026-07,9475.0,9475.0,0.0,0.0
+DVC,Eastern,2026-07,3463.0,3463.0,0.0,0.0
+Jharkhand,Eastern,2026-07,2622.0,2622.0,0.0,0.0
+Odisha,Eastern,2026-07,8012.0,8012.0,0.0,0.0
+West Bengal,Eastern,2026-07,12324.0,12324.0,0.0,0.0
+Sikkim,Eastern,2026-07,89.0,89.0,0.0,0.0
+Andaman and Nicobar,Eastern,2026-07,67.0,67.0,0.0,0.0
+Arunachal Pradesh,North-Eastern,2026-07,202.0,202.0,0.0,0.0
+Assam,North-Eastern,2026-07,2743.0,2733.0,10.0,0.4
+Manipur,North-Eastern,2026-07,260.0,260.0,0.0,0.0
+Meghalaya,North-Eastern,2026-07,375.0,375.0,0.0,0.0
+Mizoram,North-Eastern,2026-07,151.0,151.0,0.0,0.0
+Nagaland,North-Eastern,2026-07,208.0,203.0,5.0,2.4
+Tripura,North-Eastern,2026-07,372.0,372.0,0.0,0.0
+All India,All India,2026-07,270209.0,270203.0,6.0,0.0
