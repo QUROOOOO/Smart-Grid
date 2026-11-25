@@ -39,17 +39,17 @@ Light mode is default; dark mode via `.dark` on `<html>`.
 - [x] `npm run build` green
 
 ## Phase 5 — CEA, Carbon & Telemetry views
-- [ ] `CEAStateExplorerView.tsx`
-- [ ] `CarbonScorecardView.tsx`
-- [ ] `ModelTelemetryView.tsx`
-- [ ] `npm run build` green
+- [x] `CEAStateExplorerView.tsx` — trajectory + callout, arc gauge, leaderboard, sortable table
+- [x] `CarbonScorecardView.tsx` — scallop grade seal, tick ring, stacked breakdown, impact rows
+- [x] `ModelTelemetryView.tsx` — benchmark matrix, SHAP pills, holdout chart, timing ring
+- [x] `npm run build` green
 
 ## Phase 6 — Polish, Verify & Ship
-- [ ] Zero foreign colors (`orange-`, `emerald-`, `amber-`, `red-`, `#F97316`, `gridOrange`, `mutedEmerald`)
-- [ ] Responsive containers + tabular numerals everywhere
-- [ ] Both themes audited
-- [ ] `npm run build` exit 0
-- [ ] Committed & pushed to `origin main`
+- [x] Zero foreign colors (`orange-`, `emerald-`, `amber-`, `red-`, `#F97316`, `gridOrange`, `mutedEmerald`) — dead `Slider.tsx` removed
+- [x] Responsive containers + tabular numerals everywhere
+- [x] Both themes audited
+- [x] `npm run build` exit 0
+- [x] Committed & pushed to `origin main`
 
 ## Files modified log
 - `index.html` — fonts + theme bootstrap script
@@ -69,3 +69,7 @@ Light mode is default; dark mode via `.dark` on `<html>`.
 - `src/lib/useChartTheme.ts` — new (theme-aware recharts colors)
 - `src/views/ForecastView.tsx` — bento KPIs, tonal what-if console, hero chart, insights; Invalid Date + inverted-window bugs fixed
 - `src/views/PeakChargingView.tsx` — pill-column tariff/load charts, tick-ring gauge, cost comparison, recommendations; double-format bug fixed
+- `src/views/CEAStateExplorerView.tsx` — CEA trajectory + May callout, Karnataka arc gauge, pill leaderboard, sortable state table
+- `src/views/CarbonScorecardView.tsx` — scallop grade seal, tick-ring abatement, stacked breakdown, real-world impact, CEA v22.0 citation
+- `src/views/ModelTelemetryView.tsx` — benchmark matrix w/ ACTIVE MODEL pill, SHAP pills, holdout chart, peak-timing ring
+- `src/components/Slider.tsx` — deleted (legacy, superseded by `WavySlider`)

@@ -6,50 +6,45 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   Cell,
 } from "recharts";
 import { getApiClient } from "../services/apiClient";
-import { CarbonScorecardResponse, CarbonScorecardRequest, CarbonScorecardSummary } from "../types/api";
-import { Card, CardHeader, CardTitle, CardContent } from "../components/Card";
-import { Slider } from "../components/Slider";
+import { CarbonScorecardResponse, CarbonScorecardRequest } from "../types/api";
+import { ExpressiveCard, CardLabel } from "../components/ExpressiveCard";
+import { WavySlider } from "../components/WavySlider";
 import { Select } from "../components/Select";
 import { KPICard } from "../components/KPICard";
 import { Badge } from "../components/Badge";
-import { formatMW, formatCurrency, formatPercentage, formatNumber, formatTimestamp, debounce } from "../lib/utils";
-import { TreePine, Car, Factory, Leaf, Loader2, Zap, Battery, Sun } from "lucide-react";
+import { ScallopBadge } from "../components/ScallopBadge";
+import { CircularTickRing } from "../components/ExpressiveGauges";
+import { formatNumber, formatPercentage, debounce, cn } from "../lib/utils";
+import { useChartTheme } from "../lib/useChartTheme";
+import { TreePine, Car, Factory, Leaf, Loader2, Zap } from "lucide-react";
 
-const GRADE_COLORS: Record<string, string> = {
-  "A+": "#10B981",
-  "A": "#22C55E",
-  "B": "#F59E0B",
-  "C": "#F97316",
-  "D": "#EF4444",
-};
+const ENTITY_OPTIONS = [
+  { value: "All_India", label: "All India" },
+  { value: "NR", label: "Northern Region" },
+  { value: "WR", label: "Western Region" },
+  { value: "SR", label: "Southern Region" },
+  { value: "ER", label: "Eastern Region" },
+  { value: "NER", label: "North-Eastern Region" },
+];
 
-const ABATEMENT_COLORS = {
-  peak_shaving: "#F97316",
-  renewable_shift: "#10B981",
-  efficiency_gain: "#3B82F6",
-};
+const OM_FACTOR = 0.963;
+const CM_FACTOR = 0.705;
+const WA_FACTOR = 0.675;
 
-function AbatementTooltip({ active, payload, label }: any) {
-  if (active && payload && payload.length) {
-    return (
-      <div className="bg-surface border border-hairline rounded-lg p-3 shadow-lg min-w-[200px]">
-        <p className="font-mono text-sm text-mutedInk mb-2">{label}</p>
-        {payload.map((entry: any) => (
-          <p key={entry.name} className="text-sm flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color }} />
-            <span className="font-mono">{entry.name}:</span>
-            <span className="font-mono font-semibold">{entry.value.toFixed(2)} tCO₂</span>
-          </p>
-        ))}
-      </div>
-    );
-  }
-  return null;
+function BreakdownTooltip({ active, payload }: any) {
+  if (!active || !payload?.length) return null;
+  const p = payload[0].payload;
+  return (
+    <div className="min-w-[200px] rounded-2xl bg-surface/95 p-3 shadow-lifted ring-1 ring-borderSubtle/70 backdrop-blur">
+      <p className="font-display text-sm font-bold text-ink">{p.fullName}</p>
+      <p className="num-tabular mt-1 text-lg font-semibold text-ink">{p.value.toFixed(2)} tCO₂</p>
+      <p className="text-xs text-inkMuted">{p.pct.toFixed(0)}% of total abatement</p>
+    </div>
+  );
 }
 
 export function CarbonScorecardView() {
@@ -62,11 +57,12 @@ export function CarbonScorecardView() {
   const [facilityMw, setFacilityMw] = useState(10);
   const [shiftablePct, setShiftablePct] = useState(25);
   const [solarCapacityMw, setSolarCapacityMw] = useState(2);
-  const [batteryCapacityMwh, setBatteryCapacityMwh] = useState(4);
+  const [batteryCapacityMwh] = useState(4);
   const [baseTariff, setBaseTariff] = useState(7.5);
   const [apiMode, setApiMode] = useState<"live" | "mock">("mock");
 
   const apiClient = useMemo(() => getApiClient(), []);
+  const theme = useChartTheme();
 
   const fetchData = useCallback(
     debounce(async () => {
@@ -92,7 +88,18 @@ export function CarbonScorecardView() {
         setLoading(false);
       }
     }, 200),
-    [apiClient, entity, horizonHours, tempDelta, humidityDelta, facilityMw, shiftablePct, solarCapacityMw, batteryCapacityMwh, baseTariff]
+    [
+      apiClient,
+      entity,
+      horizonHours,
+      tempDelta,
+      humidityDelta,
+      facilityMw,
+      shiftablePct,
+      solarCapacityMw,
+      batteryCapacityMwh,
+      baseTariff,
+    ]
   );
 
   useEffect(() => {
@@ -101,29 +108,46 @@ export function CarbonScorecardView() {
 
   const summary = data?.summary;
   const grade = summary?.sustainability_grade || "D";
-  const gradeColor = GRADE_COLORS[grade] || "#6B7280";
+  const abatementPct = summary?.abatement_pct ?? 0;
 
   const abatementBreakdown = useMemo(() => {
     if (!summary) return [];
     const baseline = summary.baseline_emissions_tco2;
-    const peakShaving = baseline * 0.3 * (shiftablePct / 100) * 0.963 * 0.4;
-    const renewableShift = baseline * 0.2 * (solarCapacityMw / (facilityMw || 1)) * 0.705;
-    const efficiencyGain = baseline * 0.15 * (shiftablePct / 100) * 0.675;
+    const peakShaving = baseline * 0.3 * (shiftablePct / 100) * OM_FACTOR * 0.4;
+    const renewableShift = baseline * 0.2 * (solarCapacityMw / (facilityMw || 1)) * CM_FACTOR;
+    const efficiencyGain = baseline * 0.15 * (shiftablePct / 100) * WA_FACTOR;
     const total = peakShaving + renewableShift + efficiencyGain;
     return [
-      { name: "Peak Shaving", value: peakShaving, color: ABATEMENT_COLORS.peak_shaving, fullName: "Peak Shaving (0.963 tCO₂/MWh)" },
-      { name: "Renewable Shift", value: renewableShift, color: ABATEMENT_COLORS.renewable_shift, fullName: "Renewable Substitution (0.705 tCO₂/MWh)" },
-      { name: "Efficiency Gain", value: efficiencyGain, color: ABATEMENT_COLORS.efficiency_gain, fullName: "Efficiency Gain (0.675 tCO₂/MWh)" },
-    ].map(item => ({ ...item, pct: total > 0 ? (item.value / total) * 100 : 0 }));
-  }, [summary, shiftablePct, solarCapacityMw, facilityMw]);
+      {
+        name: "Peak Shaving",
+        value: peakShaving,
+        color: theme.brand,
+        fullName: `Peak Shaving · ${OM_FACTOR} tCO₂/MWh`,
+      },
+      {
+        name: "Renewable Shift",
+        value: renewableShift,
+        color: theme.brandBright,
+        fullName: `Renewable Substitution · ${CM_FACTOR} tCO₂/MWh`,
+      },
+      {
+        name: "Efficiency Gain",
+        value: efficiencyGain,
+        color: theme.brandVivid,
+        fullName: `Efficiency Gain · ${WA_FACTOR} tCO₂/MWh`,
+      },
+    ].map((item) => ({ ...item, pct: total > 0 ? (item.value / total) * 100 : 0 }));
+  }, [summary, shiftablePct, solarCapacityMw, facilityMw, theme]);
 
   return (
-    <div className="space-y-6 p-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-5">
+      <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-primaryInk">Industrial Carbon Abatement Scorecard</h1>
-          <p className="text-mutedInk text-sm mt-1">
-            CEA CO₂ Baseline Database v22.0 • FY 2025–26 factors
+          <h1 className="font-display text-[26px] font-extrabold tracking-tight text-ink">
+            Industrial Carbon Abatement Scorecard
+          </h1>
+          <p className="mt-1 text-sm text-inkSecondary">
+            CEA CO₂ Baseline Database v22.0 · FY 2025–26 emission factors
           </p>
         </div>
         <Badge variant={apiMode === "live" ? "success" : "warning"}>
@@ -131,230 +155,252 @@ export function CarbonScorecardView() {
         </Badge>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <KPICard
           label="Baseline Emissions"
           value={formatNumber(summary?.baseline_emissions_tco2 ?? 0, 2)}
           unit="tCO₂/day"
-          icon={<Factory className="w-5 h-5" />}
+          emphasis="tonal"
+          icon={<Factory className="h-5 w-5" />}
         />
         <KPICard
-          label="Optimized Emissions"
+          label="Optimised Emissions"
           value={formatNumber(summary?.optimized_emissions_tco2 ?? 0, 2)}
           unit="tCO₂/day"
-          status="success"
-          icon={<Leaf className="w-5 h-5" />}
+          emphasis="tonal"
+          icon={<Leaf className="h-5 w-5" />}
         />
         <KPICard
           label="Abated CO₂"
           value={formatNumber(summary?.abated_tco2 ?? 0, 2)}
           unit="tCO₂/day"
-          status="success"
-          trend={summary ? { value: summary.abatement_pct, label: "Reduction" } : null}
-          icon={<Zap className="w-5 h-5" />}
+          emphasis="brand"
+          hint={`${formatPercentage(abatementPct)} below baseline`}
+          icon={<Zap className="h-5 w-5" />}
         />
         <KPICard
           label="Sustainability Grade"
           value={grade}
-          className="relative"
-          icon={
-            <div
-              className="w-10 h-10 rounded-full flex items-center justify-center font-bold text-white text-xl"
-              style={{ backgroundColor: gradeColor }}
-            >
-              {grade}
-            </div>
-          }
+          emphasis="obsidian"
+          hint="CEA weighted-average basis"
         />
       </div>
 
-      <Card className="p-5">
-        <CardHeader>
-          <CardTitle>Abatement Levers</CardTitle>
-        </CardHeader>
-        <CardContent className="pt-0">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
-            <Select
-              label="Entity"
-              value={entity}
-              onChange={(e) => setEntity(e.target.value)}
-              options={[
-                { value: "All_India", label: "All India" },
-                { value: "NR", label: "Northern Region" },
-                { value: "WR", label: "Western Region" },
-                { value: "SR", label: "Southern Region" },
-                { value: "ER", label: "Eastern Region" },
-                { value: "NER", label: "North-Eastern Region" },
-              ]}
-            />
-            <Slider
-              label="Forecast Horizon"
-              value={horizonHours}
-              onChange={setHorizonHours}
-              min={6}
-              max={168}
-              step={6}
-              unit="h"
-            />
-            <Slider
-              label="Temperature Offset"
-              value={tempDelta}
-              onChange={setTempDelta}
-              min={-5}
-              max={8}
-              step={0.5}
-              unit="°C"
-            />
-            <Slider
-              label="Humidity Offset"
-              value={humidityDelta}
-              onChange={setHumidityDelta}
-              min={-20}
-              max={20}
-              step={1}
-              unit="%"
-            />
-            <Slider
-              label="Facility Load"
-              value={facilityMw}
-              onChange={setFacilityMw}
-              min={1}
-              max={100}
-              step={1}
-              unit="MW"
-            />
-            <Slider
-              label="Base Tariff"
-              value={baseTariff}
-              onChange={setBaseTariff}
-              min={5}
-              max={15}
-              step={0.25}
-              unit="₹/kWh"
-            />
+      <ExpressiveCard variant="tonal" padding="lg">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <CardLabel>What-If Console</CardLabel>
+            <h2 className="font-display text-lg font-bold text-ink">Abatement Levers</h2>
           </div>
-        </CardContent>
-      </Card>
+          <span className="rounded-full bg-surface px-3 py-1 text-[11px] font-semibold text-inkSecondary ring-1 ring-borderSubtle/60">
+            {entity.replace("_", " ")}
+          </span>
+        </div>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <Select
+            label="Entity"
+            value={entity}
+            onChange={(e) => setEntity(e.target.value)}
+            options={ENTITY_OPTIONS}
+          />
+          <WavySlider
+            label="Forecast Horizon"
+            value={horizonHours}
+            onChange={setHorizonHours}
+            min={6}
+            max={168}
+            step={6}
+            unit="h"
+          />
+          <WavySlider
+            label="Temperature Offset"
+            value={tempDelta}
+            onChange={setTempDelta}
+            min={-5}
+            max={8}
+            step={0.5}
+            unit="°C"
+          />
+          <WavySlider
+            label="Humidity Offset"
+            value={humidityDelta}
+            onChange={setHumidityDelta}
+            min={-20}
+            max={20}
+            step={1}
+            unit="%"
+          />
+          <WavySlider
+            label="Facility Load"
+            value={facilityMw}
+            onChange={setFacilityMw}
+            min={1}
+            max={100}
+            step={1}
+            unit="MW"
+          />
+          <WavySlider
+            label="Base Tariff"
+            value={baseTariff}
+            onChange={setBaseTariff}
+            min={5}
+            max={15}
+            step={0.25}
+            unit="₹/kWh"
+          />
+        </div>
+      </ExpressiveCard>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <Card className="lg:col-span-2">
-          <CardHeader>
-            <CardTitle>Stacked Abatement Breakdown</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-0">
-            <div className="h-[350px]">
-              {loading ? (
-                <div className="flex items-center justify-center h-full">
-                  <Loader2 className="w-8 h-8 animate-spin text-gridOrange" />
-                </div>
-              ) : (
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={abatementBreakdown}
-                    margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-                    layout="vertical"
-                  >
-                    <CartesianGrid strokeDasharray="3 3" stroke="#272A30" horizontal={false} />
-                    <XAxis
-                      tick={{ fill: "#9CA3AF", fontSize: 11, fontFamily: "JetBrains Mono" }}
-                      axisLine={{ stroke: "#272A30" }}
-                      tickLine={false}
-                      tickFormatter={(val) => val.toFixed(2) + " tCO₂"}
-                    />
-                    <YAxis
-                      dataKey="name"
-                      type="category"
-                      tick={{ fill: "#9CA3AF", fontSize: 11, fontFamily: "JetBrains Mono" }}
-                      axisLine={{ stroke: "#272A30" }}
-                      tickLine={false}
-                      width={140}
-                    />
-                    <Tooltip content={<AbatementTooltip />} />
-                    <Legend />
-                    <Bar
-                      dataKey="value"
-                      name="Abated tCO₂"
-                      radius={[0, 4, 4, 0]}
-                    >
-                      {abatementBreakdown.map((item, index) => (
-                        <Cell key={`cell-${index}`} fill={item.color} />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              )}
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <ExpressiveCard variant="elevated" padding="lg" className="lg:col-span-2">
+          <div className="mb-4 flex items-center justify-between">
+            <div>
+              <CardLabel>Composition</CardLabel>
+              <h2 className="font-display text-lg font-bold text-ink">Stacked Abatement Breakdown</h2>
             </div>
-            <div className="grid grid-cols-3 gap-4 mt-4">
-              {abatementBreakdown.map((item) => (
-                <div key={item.name} className="p-3 bg-surface border border-hairline rounded-lg">
-                  <div className="flex items-center gap-2 mb-1">
-                    <div className="w-3 h-3 rounded" style={{ backgroundColor: item.color }} />
-                    <span className="text-sm font-medium text-primaryInk">{item.name}</span>
-                  </div>
-                  <p className="num-tabular text-xl font-mono font-semibold" style={{ color: item.color }}>
-                    {item.value.toFixed(2)}
-                  </p>
-                  <p className="text-xs text-mutedInk">{item.pct.toFixed(0)}% of total</p>
+            <Badge variant="default" size="sm">
+              {formatNumber(abatementBreakdown.reduce((a, b) => a + b.value, 0), 2)} tCO₂
+            </Badge>
+          </div>
+          <div className="h-[330px]">
+            {loading ? (
+              <div className="flex h-full items-center justify-center">
+                <Loader2 className="h-7 w-7 animate-spin text-brand" />
+              </div>
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={abatementBreakdown}
+                  layout="vertical"
+                  margin={{ top: 8, right: 24, left: 0, bottom: 0 }}
+                >
+                  <CartesianGrid strokeDasharray="2 6" stroke={theme.grid} horizontal={false} />
+                  <XAxis
+                    type="number"
+                    tick={{ fill: theme.muted, fontSize: 11, fontFamily: "JetBrains Mono" }}
+                    axisLine={false}
+                    tickLine={false}
+                    tickFormatter={(v) => `${Number(v).toFixed(1)} t`}
+                  />
+                  <YAxis
+                    dataKey="name"
+                    type="category"
+                    tick={{ fill: theme.ink, fontSize: 11, fontFamily: "JetBrains Mono" }}
+                    axisLine={false}
+                    tickLine={false}
+                    width={132}
+                  />
+                  <Tooltip content={<BreakdownTooltip />} cursor={{ fill: theme.tonal, opacity: 0.4 }} />
+                  <Bar dataKey="value" radius={[0, 10, 10, 0]} maxBarSize={54}>
+                    {abatementBreakdown.map((item, index) => (
+                      <Cell key={`cell-${index}`} fill={item.color} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            )}
+          </div>
+          <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {abatementBreakdown.map((item) => (
+              <div key={item.name} className="rounded-2xl bg-surfaceTonal p-3">
+                <div className="mb-1 flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: item.color }} />
+                  <span className="text-xs font-semibold text-inkSecondary">{item.name}</span>
                 </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+                <p className="num-tabular text-lg font-semibold text-ink">{item.value.toFixed(2)}</p>
+                <p className="text-[11px] text-inkMuted">{item.pct.toFixed(0)}% of total</p>
+              </div>
+            ))}
+          </div>
+        </ExpressiveCard>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Real-World Equivalents</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-0 space-y-4">
-            <div className="flex items-center gap-4 p-3 bg-surface border border-hairline rounded-lg">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(16, 185, 129, 0.15)" }}>
-                <TreePine className="w-6 h-6 text-mutedEmerald" />
-              </div>
-              <div>
-                <p className="text-sm text-mutedInk">Trees Planted (Annual)</p>
-                <p className="num-tabular text-2xl font-mono font-semibold text-mutedEmerald">
-                  {formatNumber(summary?.equivalent_trees_annual || 0)}
-                </p>
-              </div>
+        <ExpressiveCard variant="obsidian" padding="lg" className="flex flex-col justify-between">
+          <div>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-canvas/60">
+              Sustainability Grade
+            </p>
+            <div className="mt-6 flex justify-center">
+              <ScallopBadge value={grade} variant="brand" size={168}>{grade}</ScallopBadge>
             </div>
-            <div className="flex items-center gap-4 p-3 bg-surface border border-hairline rounded-lg">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(249, 115, 22, 0.15)" }}>
-                <Car className="w-6 h-6 text-gridOrange" />
-              </div>
-              <div>
-                <p className="text-sm text-mutedInk">Vehicles Removed (Daily)</p>
-                <p className="num-tabular text-2xl font-mono font-semibold text-gridOrange">
-                  {formatNumber(summary?.coal_avoided_tonnes || 0)}
-                </p>
-              </div>
+          </div>
+          <div className="mt-6 space-y-3">
+            <div className="flex items-center justify-between rounded-2xl bg-canvas/10 px-4 py-3">
+              <span className="text-xs text-canvas/70">Abatement</span>
+              <span className="num-tabular text-lg font-semibold text-canvas">
+                {formatPercentage(abatementPct)}
+              </span>
             </div>
-            <div className="flex items-center gap-4 p-3 bg-surface border border-hairline rounded-lg">
-              <div className="w-12 h-12 rounded-lg flex items-center justify-center" style={{ backgroundColor: "rgba(59, 130, 246, 0.15)" }}>
-                <Leaf className="w-6 h-6 text-blue-500" />
-              </div>
-              <div>
-                <p className="text-sm text-mutedInk">Coal Avoided</p>
-                <p className="num-tabular text-2xl font-mono font-semibold text-blue-500">
-                  {formatNumber(summary?.coal_avoided_tonnes ?? 0, 1)} tonnes
-                </p>
-              </div>
+            <div className="flex items-center justify-between rounded-2xl bg-canvas/10 px-4 py-3">
+              <span className="text-xs text-canvas/70">Trees / year</span>
+              <span className="num-tabular text-lg font-semibold text-canvas">
+                {formatNumber(summary?.equivalent_trees_annual ?? 0)}
+              </span>
             </div>
-            <div className="pt-4 border-t border-hairline">
-              <p className="text-xs text-mutedInk text-center">
-                Source: CEA CO₂ Baseline Database v22.0, FY 2025–26 • Weighted Avg: 0.675 tCO₂/MWh • Operating Margin: 0.963 tCO₂/MWh • Combined Margin: 0.705 tCO₂/MWh
-              </p>
-            </div>
-          </CardContent>
-        </Card>
+          </div>
+        </ExpressiveCard>
       </div>
 
-      <Card className="p-5">
-        <CardHeader>
-          <CardTitle>Advanced Levers</CardTitle>
-        </CardHeader>
-        <CardContent className="pt-0">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <Slider
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <ExpressiveCard variant="elevated" padding="lg">
+          <CardLabel>Equivalents</CardLabel>
+          <h2 className="mb-4 font-display text-lg font-bold text-ink">Real-World Impact</h2>
+          <div className="space-y-3">
+            <div className="flex items-center gap-4 rounded-2xl bg-surfaceTonal p-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brandWash text-brand">
+                <TreePine className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-xs text-inkMuted">Trees Planted (Annual)</p>
+                <p className="num-tabular text-xl font-semibold text-ink">
+                  {formatNumber(summary?.equivalent_trees_annual ?? 0)}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 rounded-2xl bg-surfaceTonal p-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brandWash text-brandVivid">
+                <Car className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-xs text-inkMuted">Vehicles Removed (Daily)</p>
+                <p className="num-tabular text-xl font-semibold text-ink">
+                  {formatNumber(summary?.coal_avoided_tonnes ?? 0)}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 rounded-2xl bg-surfaceTonal p-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brandWash text-brandBright">
+                <Leaf className="h-5 w-5" />
+              </span>
+              <div>
+                <p className="text-xs text-inkMuted">Coal Avoided</p>
+                <p className="num-tabular text-xl font-semibold text-ink">
+                  {formatNumber(summary?.coal_avoided_tonnes ?? 0, 1)} t
+                </p>
+              </div>
+            </div>
+          </div>
+        </ExpressiveCard>
+
+        <ExpressiveCard variant="tonal" padding="lg" className="flex flex-col items-center justify-center">
+          <CircularTickRing
+            value={abatementPct}
+            size={186}
+            strokeWidth={11}
+            ticks={44}
+            label="abated"
+            caption="vs baseline"
+            tone="brand"
+          />
+          <p className="mt-4 max-w-[220px] text-center text-xs text-inkSecondary">
+            {formatNumber(summary?.abated_tco2 ?? 0, 2)} tCO₂/day avoided under the current lever mix.
+          </p>
+        </ExpressiveCard>
+
+        <ExpressiveCard variant="elevated" padding="lg">
+          <CardLabel>Advanced</CardLabel>
+          <h2 className="mb-4 font-display text-lg font-bold text-ink">Levers</h2>
+          <div className="space-y-5">
+            <WavySlider
               label="Peak Shaving"
               value={shiftablePct}
               onChange={setShiftablePct}
@@ -363,7 +409,7 @@ export function CarbonScorecardView() {
               step={5}
               unit="%"
             />
-            <Slider
+            <WavySlider
               label="Renewable Substitution"
               value={(solarCapacityMw / (facilityMw || 1)) * 100}
               onChange={(v) => setSolarCapacityMw((v / 100) * facilityMw)}
@@ -372,22 +418,34 @@ export function CarbonScorecardView() {
               step={5}
               unit="%"
             />
-            <Slider
-              label="Efficiency Gain"
-              value={0}
-              onChange={() => {}}
-              min={0}
-              max={20}
-              step={5}
-              unit="%"
-              className="opacity-50 pointer-events-none"
-            />
+            <div className={cn("opacity-50")}>
+              <WavySlider
+                label="Efficiency Gain"
+                value={0}
+                onChange={() => {}}
+                min={0}
+                max={20}
+                step={5}
+                unit="%"
+              />
+            </div>
           </div>
-          <p className="text-xs text-mutedInk mt-4 text-center">
-            Peak Shaving @ 0.963 tCO₂/MWh (Operating Margin) • Renewable Substitution @ 0.705 tCO₂/MWh (Combined Margin) • Efficiency Gain @ 0.675 tCO₂/MWh (Weighted Avg)
+          <p className="mt-4 text-[11px] leading-relaxed text-inkMuted">
+            Peak Shaving @ {OM_FACTOR} · Renewable @ {CM_FACTOR} · Efficiency @ {WA_FACTOR} tCO₂/MWh
           </p>
-        </CardContent>
-      </Card>
+        </ExpressiveCard>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-center gap-2 rounded-full bg-surfaceTonal px-4 py-2 text-[11px] text-inkMuted ring-1 ring-borderSubtle/50">
+        <span className="font-semibold text-inkSecondary">Source</span>
+        <span>CEA CO₂ Baseline Database v22.0 · FY 2025–26</span>
+        <span className="text-border">•</span>
+        <span>Operating Margin {OM_FACTOR}</span>
+        <span className="text-border">•</span>
+        <span>Combined Margin {CM_FACTOR}</span>
+        <span className="text-border">•</span>
+        <span>Weighted Avg {WA_FACTOR} tCO₂/MWh</span>
+      </div>
     </div>
   );
 }

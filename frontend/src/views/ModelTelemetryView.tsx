@@ -8,25 +8,45 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
   ResponsiveContainer,
   Cell,
 } from "recharts";
 import { getApiClient } from "../services/apiClient";
-import { ModelMetricsResponse, ModelScore, FeatureImportanceItem, HoldoutPoint } from "../types/api";
-import { Card, CardHeader, CardTitle, CardContent } from "../components/Card";
-import { Select } from "../components/Select";
+import { ModelMetricsResponse, ModelScore } from "../types/api";
+import { ExpressiveCard, CardLabel } from "../components/ExpressiveCard";
+import { ConnectedButtonGroup } from "../components/ConnectedButtonGroup";
 import { KPICard } from "../components/KPICard";
 import { Badge } from "../components/Badge";
-import { formatMW, formatPercentage, formatNumber, formatTimestamp } from "../lib/utils";
-import { TrendingUp, Award, Loader2, Brain } from "lucide-react";
+import { CircularTickRing } from "../components/ExpressiveGauges";
+import {
+  formatMW,
+  formatPercentage,
+  formatNumber,
+  formatHourLabel,
+  cn,
+} from "../lib/utils";
+import { useChartTheme } from "../lib/useChartTheme";
+import { TrendingUp, Award, Loader2, Brain, Target, Activity } from "lucide-react";
 
-const MODEL_COLORS: Record<string, string> = {
-  XGBoost: "#F97316",
-  RandomForest: "#10B981",
-  Ridge: "#3B82F6",
-  Naive24h: "#6B7280",
-};
+const REGION_OPTIONS = [
+  { value: "All_India", label: "India" },
+  { value: "NR", label: "North" },
+  { value: "WR", label: "West" },
+  { value: "SR", label: "South" },
+  { value: "ER", label: "East" },
+  { value: "NER", label: "NE" },
+];
+
+const COLUMNS: { key: keyof ModelScore; label: string; format: (m: ModelScore) => string }[] = [
+  { key: "mae_mw", label: "MAE (MW)", format: (m) => formatNumber(Math.round(m.mae_mw)) },
+  { key: "rmse_mw", label: "RMSE (MW)", format: (m) => formatNumber(Math.round(m.rmse_mw)) },
+  { key: "mape_pct", label: "MAPE", format: (m) => formatPercentage(m.mape_pct, 3) },
+  { key: "r2_score", label: "R²", format: (m) => m.r2_score.toFixed(4) },
+  { key: "daily_peak_mae_mw", label: "Peak MAE", format: (m) => formatMW(m.daily_peak_mae_mw) },
+  { key: "daily_peak_mape_pct", label: "Peak MAPE", format: (m) => formatPercentage(m.daily_peak_mape_pct, 3) },
+  { key: "peak_timing_hit_rate_1h_pct", label: "Timing ±1h", format: (m) => formatPercentage(m.peak_timing_hit_rate_1h_pct) },
+  { key: "peak_alert_f1", label: "Alert F1", format: (m) => m.peak_alert_f1.toFixed(4) },
+];
 
 export function ModelTelemetryView() {
   const [data, setData] = useState<ModelMetricsResponse | null>(null);
@@ -35,6 +55,7 @@ export function ModelTelemetryView() {
   const [apiMode, setApiMode] = useState<"live" | "mock">("mock");
 
   const apiClient = useMemo(() => getApiClient(), []);
+  const theme = useChartTheme();
 
   useEffect(() => {
     let mounted = true;
@@ -46,19 +67,39 @@ export function ModelTelemetryView() {
         setLoading(false);
       }
     });
-    return () => { mounted = false; };
+    return () => {
+      mounted = false;
+    };
   }, [region, apiClient]);
 
-  const xgboost = data?.models.find(m => m.model_name === "XGBoost");
-  const bestModel = data?.models.reduce((best, m) => m.r2_score > best.r2_score ? m : best, data?.models[0]);
+  const xgboost = data?.models.find((m) => m.model_name === "XGBoost");
+  const bestModel = data?.models.reduce(
+    (best, m) => (m.r2_score > best.r2_score ? m : best),
+    data?.models[0]
+  );
+  const shap = useMemo(
+    () => (data?.feature_importances ?? []).slice(0, 12).reverse(),
+    [data]
+  );
+  const holdout = useMemo(
+    () =>
+      (data?.holdout_sample ?? []).slice(0, 48).map((p) => ({
+        ...p,
+        label: formatHourLabel(p.timestamp),
+      })),
+    [data]
+  );
+  const maxImportance = shap.length ? Math.max(...shap.map((f) => f.importance)) : 1;
 
   return (
-    <div className="space-y-6 p-6">
-      <div className="flex items-center justify-between">
+    <div className="space-y-5">
+      <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold text-primaryInk">Model Telemetry & Explainability</h1>
-          <p className="text-mutedInk text-sm mt-1">
-            Holdout benchmarks (Jul 16 – Aug 31, 2026) • SHAP feature importance • Backtest comparison
+          <h1 className="font-display text-[26px] font-extrabold tracking-tight text-ink">
+            Model Telemetry
+          </h1>
+          <p className="mt-1 text-sm text-inkMuted">
+            Holdout benchmarks · SHAP explainability · backtest comparison
           </p>
         </div>
         <Badge variant={apiMode === "live" ? "success" : "warning"}>
@@ -66,287 +107,366 @@ export function ModelTelemetryView() {
         </Badge>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         <KPICard
-          label="Best Model"
+          label="Active Model"
           value={bestModel?.model_name || "—"}
-          status="success"
-          icon={<Award className="w-5 h-5" />}
+          emphasis="brand"
+          hint={bestModel ? `R² ${bestModel.r2_score.toFixed(4)}` : undefined}
+          icon={<Award className="h-5 w-5" />}
         />
         <KPICard
           label="XGBoost R²"
           value={xgboost?.r2_score?.toFixed(4) || "—"}
+          emphasis="tonal"
           trend={xgboost ? { value: (xgboost.r2_score - 0.98) * 100, label: "vs Ridge" } : null}
-          icon={<TrendingUp className="w-5 h-5" />}
+          icon={<TrendingUp className="h-5 w-5" />}
         />
         <KPICard
           label="Peak Magnitude MAE"
           value={xgboost ? formatMW(xgboost.daily_peak_mae_mw) : "—"}
-          icon={<Brain className="w-5 h-5" />}
+          emphasis="tonal"
+          icon={<Brain className="h-5 w-5" />}
         />
         <KPICard
           label="Peak Timing Hit Rate"
           value={xgboost ? formatPercentage(xgboost.peak_timing_hit_rate_1h_pct) : "—"}
-          status="success"
-          icon={<TrendingUp className="w-5 h-5" />}
+          emphasis="tonal"
+          icon={<Target className="h-5 w-5" />}
         />
       </div>
 
-      <Card className="p-5">
-        <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <CardTitle>Region Selector</CardTitle>
-          <Select
-            label=""
+      <ExpressiveCard variant="elevated" padding="lg">
+        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <CardLabel>Benchmark Matrix</CardLabel>
+            <p className="mt-1 text-sm text-inkMuted">
+              {data?.train_period || "—"} → {data?.test_period || "—"} ·{" "}
+              {formatNumber(data?.train_rows ?? 0)} train / {formatNumber(data?.test_rows ?? 0)} test rows
+            </p>
+          </div>
+          <ConnectedButtonGroup
+            options={REGION_OPTIONS}
             value={region}
-            onChange={(e) => setRegion(e.target.value)}
-            options={[
-              { value: "All_India", label: "All India" },
-              { value: "NR", label: "Northern Region" },
-              { value: "WR", label: "Western Region" },
-              { value: "SR", label: "Southern Region" },
-              { value: "ER", label: "Eastern Region" },
-              { value: "NER", label: "North-Eastern Region" },
-            ]}
-            className="w-64"
+            onChange={setRegion}
+            size="sm"
+            ariaLabel="Benchmark region"
           />
-        </CardHeader>
-        <CardContent className="pt-0">
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-hairline text-left text-mutedInk">
-                  <th className="pb-3 pr-4 font-medium">Model</th>
-                  <th className="pb-3 pr-4 font-medium num-tabular">MAE (MW)</th>
-                  <th className="pb-3 pr-4 font-medium num-tabular">RMSE (MW)</th>
-                  <th className="pb-3 pr-4 font-medium num-tabular">MAPE (%)</th>
-                  <th className="pb-3 pr-4 font-medium num-tabular">R²</th>
-                  <th className="pb-3 pr-4 font-medium num-tabular">Daily Peak MAE (MW)</th>
-                  <th className="pb-3 pr-4 font-medium num-tabular">Peak MAPE (%)</th>
-                  <th className="pb-3 pr-4 font-medium num-tabular">Peak Timing Hit (±1h)</th>
-                  <th className="pb-3 pr-4 font-medium num-tabular">Peak Alert F1</th>
-                </tr>
-              </thead>
-              <tbody>
-                {data?.models.map((model: ModelScore, i) => (
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-borderSubtle/60 text-left">
+                <th className="pb-3 pr-4 text-[11px] font-semibold uppercase tracking-wider text-inkMuted">
+                  Model
+                </th>
+                {COLUMNS.map((c) => (
+                  <th
+                    key={c.label}
+                    className="pb-3 pr-4 text-right text-[11px] font-semibold uppercase tracking-wider text-inkMuted"
+                  >
+                    {c.label}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {data?.models.map((model) => {
+                const active = model.model_name === "XGBoost";
+                return (
                   <tr
                     key={model.model_name}
-                    className={`border-b border-hairline/50 hover:bg-surfaceHover/50 ${model.model_name === "XGBoost" ? "bg-gridOrange/5" : i % 2 === 0 ? "bg-surface/30" : ""}`}
+                    className={cn(
+                      "border-b border-borderSubtle/40 transition-colors last:border-0",
+                      active ? "bg-brandWash/70" : "hover:bg-surfaceHover/60"
+                    )}
                   >
-                    <td className="py-3 pr-4 font-medium text-primaryInk flex items-center gap-2">
-                      {model.model_name === "XGBoost" && <Badge variant="warning" size="sm">BEST</Badge>}
-                      {model.model_name}
+                    <td className="py-3.5 pr-4">
+                      <span className="flex items-center gap-2 font-medium text-ink">
+                        {model.model_name}
+                        {active && (
+                          <Badge variant="success" size="sm">
+                            ACTIVE MODEL
+                          </Badge>
+                        )}
+                      </span>
                     </td>
-                    <td className="py-3 pr-4 num-tabular font-mono">{formatNumber(Math.round(model.mae_mw))}</td>
-                    <td className="py-3 pr-4 num-tabular font-mono">{formatNumber(Math.round(model.rmse_mw))}</td>
-                    <td className="py-3 pr-4 num-tabular font-mono">{formatPercentage(model.mape_pct, 3)}</td>
-                    <td className="py-3 pr-4 num-tabular font-mono font-semibold">{model.r2_score.toFixed(4)}</td>
-                    <td className="py-3 pr-4 num-tabular font-mono">{formatMW(model.daily_peak_mae_mw)}</td>
-                    <td className="py-3 pr-4 num-tabular font-mono">{formatPercentage(model.daily_peak_mape_pct, 3)}</td>
-                    <td className="py-3 pr-4 num-tabular font-mono">{formatPercentage(model.peak_timing_hit_rate_1h_pct)}</td>
-                    <td className="py-3 pr-4 num-tabular font-mono">{model.peak_alert_f1.toFixed(4)}</td>
+                    {COLUMNS.map((c) => (
+                      <td
+                        key={c.label}
+                        className={cn(
+                          "py-3.5 pr-4 text-right num-tabular text-inkSecondary",
+                          active && "font-semibold text-ink"
+                        )}
+                      >
+                        {c.format(model)}
+                      </td>
+                    ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </ExpressiveCard>
+
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-5">
+        <ExpressiveCard variant="tonal" padding="lg" className="lg:col-span-2">
+          <CardLabel>SHAP Feature Importance</CardLabel>
+          <p className="mt-1 text-sm text-inkMuted">Top 12 drivers, normalised gain</p>
+          <div className="mt-5 space-y-2.5">
+            {loading ? (
+              <div className="flex h-[320px] items-center justify-center">
+                <Loader2 className="h-7 w-7 animate-spin text-brand" />
+              </div>
+            ) : (
+              shap.map((f, i) => {
+                const pct = (f.importance / maxImportance) * 100;
+                return (
+                  <div key={f.feature} className="group">
+                    <div className="mb-1 flex items-baseline justify-between gap-3">
+                      <span className="truncate text-xs text-inkSecondary">{f.feature}</span>
+                      <span className="num-tabular shrink-0 text-xs font-semibold text-ink">
+                        {(f.importance * 100).toFixed(1)}%
+                      </span>
+                    </div>
+                    <div className="h-2.5 overflow-hidden rounded-full bg-surface">
+                      <div
+                        className="h-full rounded-full bg-brand transition-all duration-500"
+                        style={{ width: `${pct}%`, opacity: 1 - i * 0.055 }}
+                      />
+                    </div>
+                  </div>
+                );
+              })
+            )}
           </div>
-        </CardContent>
-      </Card>
+        </ExpressiveCard>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>SHAP Feature Importance (Top 12)</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-0">
-            <div className="h-[400px]">
-              {loading ? (
-                <div className="flex items-center justify-center h-full">
-                  <Loader2 className="w-8 h-8 animate-spin text-gridOrange" />
-                </div>
-              ) : (
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart
-                    data={data?.feature_importances.slice(0, 12).reverse() || []}
-                    layout="vertical"
-                    margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" stroke="#272A30" horizontal={false} />
-                    <XAxis
-                      tick={{ fill: "#9CA3AF", fontSize: 11, fontFamily: "JetBrains Mono" }}
-                      axisLine={{ stroke: "#272A30" }}
-                      tickLine={false}
-                      tickFormatter={(val) => (val * 100).toFixed(1) + "%"}
-                    />
-                    <YAxis
-                      dataKey="feature"
-                      type="category"
-                      tick={{ fill: "#9CA3AF", fontSize: 11, fontFamily: "JetBrains Mono" }}
-                      axisLine={{ stroke: "#272A30" }}
-                      tickLine={false}
-                      width={180}
-                    />
-                    <Tooltip
-                      content={({ active, payload, label }: any) => {
-                        if (active && payload && payload.length) {
-                          return (
-                            <div className="bg-surface border border-hairline rounded-lg p-3 shadow-lg">
-                              <p className="font-mono text-sm text-mutedInk mb-1">{label}</p>
-                              <p className="text-sm">
-                                <span className="font-mono">Importance:</span>{" "}
-                                <span className="font-mono font-semibold">
-                                  {(payload[0].value * 100).toFixed(1)}%
-                                </span>
-                              </p>
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
-                    <Bar
-                      dataKey="importance"
-                      name="Importance"
-                      radius={[0, 4, 4, 0]}
-                    >
-                      {data?.feature_importances.slice(0, 12).reverse().map((_, index) => (
-                        <Cell key={`cell-${index}`} fill="#F97316" />
-                      ))}
-                    </Bar>
-                  </BarChart>
-                </ResponsiveContainer>
-              )}
+        <ExpressiveCard variant="elevated" padding="lg" className="lg:col-span-3">
+          <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <CardLabel>Actual vs Predicted</CardLabel>
+              <p className="mt-1 text-sm text-inkMuted">Holdout sample · first 48 hours</p>
             </div>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle>Actual vs Predicted (Holdout Sample)</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-0">
-            <div className="h-[400px]">
-              {loading ? (
-                <div className="flex items-center justify-center h-full">
-                  <Loader2 className="w-8 h-8 animate-spin text-gridOrange" />
-                </div>
-              ) : (
-                <ResponsiveContainer width="100%" height="100%">
-                  <LineChart
-                    data={data?.holdout_sample.slice(0, 48) || []}
-                    margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-                  >
-                    <CartesianGrid strokeDasharray="3 3" stroke="#272A30" vertical={false} />
-                    <XAxis
-                      dataKey="timestamp"
-                      tick={{ fill: "#9CA3AF", fontSize: 11, fontFamily: "JetBrains Mono" }}
-                      axisLine={{ stroke: "#272A30" }}
-                      tickLine={false}
-                      tickFormatter={(val) => formatTimestamp(val)}
-                      interval={6}
-                    />
-                    <YAxis
-                      tick={{ fill: "#9CA3AF", fontSize: 11, fontFamily: "JetBrains Mono" }}
-                      axisLine={{ stroke: "#272A30" }}
-                      tickLine={false}
-                      tickFormatter={(val) => formatNumber(Math.round(val / 1000)) + "k"}
-                    />
-                    <Tooltip
-                      content={({ active, payload, label }: any) => {
-                        if (active && payload && payload.length) {
-                          return (
-                            <div className="bg-surface border border-hairline rounded-lg p-3 shadow-lg min-w-[200px]">
-                              <p className="font-mono text-sm text-mutedInk mb-2">{formatTimestamp(label)}</p>
-                              {payload.map((entry: any) => (
-                                <p key={entry.name} className="text-sm flex items-center gap-2">
-                                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: entry.color }} />
-                                  <span className="font-mono">{entry.name}:</span>
-                                  <span className="font-mono font-semibold">{formatMW(entry.value)}</span>
-                                </p>
-                              ))}
-                            </div>
-                          );
-                        }
-                        return null;
-                      }}
-                    />
-                    <Legend />
-                    <Line
-                      type="monotone"
-                      dataKey="actual_mw"
-                      stroke="#F4F4F5"
-                      strokeWidth={2}
-                      dot={false}
-                      name="Actual"
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="xgboost_mw"
-                      stroke="#F97316"
-                      strokeWidth={2}
-                      strokeDasharray="5 5"
-                      dot={false}
-                      name="XGBoost"
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="ridge_mw"
-                      stroke="#3B82F6"
-                      strokeWidth={1.5}
-                      dot={false}
-                      name="Ridge"
-                    />
-                    <Line
-                      type="monotone"
-                      dataKey="naive_24h_mw"
-                      stroke="#6B7280"
-                      strokeWidth={1.5}
-                      strokeDasharray="2 2"
-                      dot={false}
-                      name="Naive 24h"
-                    />
-                  </LineChart>
-                </ResponsiveContainer>
-              )}
-            </div>
-            <div className="flex items-center gap-4 mt-4 text-sm text-mutedInk flex-wrap">
-              <span className="flex items-center gap-1">
-                <span className="w-3 h-0.5 bg-white" /> Actual
+            <div className="flex flex-wrap items-center gap-3 text-[11px] text-inkMuted">
+              <span className="flex items-center gap-1.5">
+                <span className="h-0.5 w-4 rounded-full" style={{ background: theme.ink }} />
+                Actual
               </span>
-              <span className="flex items-center gap-1">
-                <span className="w-3 h-0.5 bg-gridOrange border-t border-gridOrange" style={{ borderTopStyle: "dashed" }} /> XGBoost
+              <span className="flex items-center gap-1.5">
+                <span
+                  className="h-0.5 w-4 rounded-full"
+                  style={{ background: theme.brand }}
+                />
+                XGBoost
               </span>
-              <span className="flex items-center gap-1">
-                <span className="w-3 h-0.5 bg-blue-500" /> Ridge
+              <span className="flex items-center gap-1.5">
+                <span className="h-0.5 w-4 rounded-full" style={{ background: theme.brandVivid }} />
+                Ridge
               </span>
-              <span className="flex items-center gap-1">
-                <span className="w-3 h-0.5 bg-gray-500 border-t border-gray-500" style={{ borderTopStyle: "dashed" }} /> Naive 24h
+              <span className="flex items-center gap-1.5">
+                <span className="h-0.5 w-4 rounded-full" style={{ background: theme.tonal }} />
+                Naive 24h
               </span>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+          <div className="h-[330px]">
+            {loading ? (
+              <div className="flex h-full items-center justify-center">
+                <Loader2 className="h-7 w-7 animate-spin text-brand" />
+              </div>
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={holdout} margin={{ top: 8, right: 12, left: 0, bottom: 0 }}>
+                  <CartesianGrid vertical={false} strokeDasharray="2 6" stroke={theme.grid} />
+                  <XAxis
+                    dataKey="label"
+                    tick={{ fill: theme.muted, fontSize: 10, fontFamily: "JetBrains Mono" }}
+                    axisLine={false}
+                    tickLine={false}
+                    minTickGap={30}
+                  />
+                  <YAxis
+                    tick={{ fill: theme.muted, fontSize: 10, fontFamily: "JetBrains Mono" }}
+                    axisLine={false}
+                    tickLine={false}
+                    width={48}
+                    tickFormatter={(val) => formatNumber(Math.round(val / 1000)) + "k"}
+                  />
+                  <Tooltip
+                    cursor={{ stroke: theme.muted, strokeDasharray: "3 4" }}
+                    content={({ active, payload }: any) => {
+                      if (!active || !payload?.length) return null;
+                      const point = payload[0].payload;
+                      return (
+                        <div className="rounded-2xl bg-surface/95 p-3 shadow-lifted ring-1 ring-borderSubtle/70 backdrop-blur">
+                          <p className="num-tabular mb-2 text-xs font-semibold text-ink">
+                            {formatHourLabel(point.timestamp)}
+                          </p>
+                          {payload.map((entry: any) => (
+                            <p
+                              key={entry.name}
+                              className="flex items-center justify-between gap-4 text-xs text-inkSecondary"
+                            >
+                              <span className="flex items-center gap-1.5">
+                                <span
+                                  className="h-1.5 w-1.5 rounded-full"
+                                  style={{ background: entry.color }}
+                                />
+                                {entry.name}
+                              </span>
+                              <span className="num-tabular font-semibold text-ink">
+                                {formatMW(entry.value)}
+                              </span>
+                            </p>
+                          ))}
+                        </div>
+                      );
+                    }}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="actual_mw"
+                    stroke={theme.ink}
+                    strokeWidth={2.5}
+                    dot={false}
+                    name="Actual"
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="xgboost_mw"
+                    stroke={theme.brand}
+                    strokeWidth={2}
+                    strokeDasharray="5 4"
+                    dot={false}
+                    name="XGBoost"
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="ridge_mw"
+                    stroke={theme.brandVivid}
+                    strokeWidth={1.5}
+                    dot={false}
+                    name="Ridge"
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="naive_24h_mw"
+                    stroke={theme.tonal}
+                    strokeWidth={1.5}
+                    strokeDasharray="2 3"
+                    dot={false}
+                    name="Naive 24h"
+                  />
+                </LineChart>
+              </ResponsiveContainer>
+            )}
+          </div>
+        </ExpressiveCard>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Training Details</CardTitle>
-        </CardHeader>
-        <CardContent className="pt-0">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
-            <div>
-              <p className="text-mutedInk">Train Period</p>
-              <p className="font-mono text-primaryInk">{data?.train_period || "—"}</p>
-            </div>
-            <div>
-              <p className="text-mutedInk">Test Period</p>
-              <p className="font-mono text-primaryInk">{data?.test_period || "—"}</p>
-            </div>
-            <div>
-              <p className="text-mutedInk">Train / Test Rows</p>
-              <p className="font-mono text-primaryInk">{data?.train_rows || "—"} / {data?.test_rows || "—"}</p>
+      <div className="grid grid-cols-1 gap-5 lg:grid-cols-3">
+        <ExpressiveCard variant="obsidian" padding="lg">
+          <CardLabel className="text-canvas/60">Peak Timing</CardLabel>
+          <div className="mt-4 flex items-center gap-5">
+            <CircularTickRing
+              value={xgboost?.peak_timing_hit_rate_1h_pct ?? 0}
+              size={150}
+              strokeWidth={9}
+              ticks={36}
+              label="±1h"
+              caption="hit rate"
+              tone="brand"
+            />
+            <div className="space-y-3">
+              <div>
+                <p className="num-tabular font-display text-2xl font-extrabold text-canvas">
+                  {formatPercentage(xgboost?.peak_timing_hit_rate_1h_pct ?? 0)}
+                </p>
+                <p className="text-[11px] uppercase tracking-wider text-canvas/60">
+                  Peak timing accuracy
+                </p>
+              </div>
+              <div>
+                <p className="num-tabular font-display text-2xl font-extrabold text-canvas">
+                  {formatMW(xgboost?.daily_peak_mae_mw ?? 0)}
+                </p>
+                <p className="text-[11px] uppercase tracking-wider text-canvas/60">
+                  Daily peak MAE
+                </p>
+              </div>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </ExpressiveCard>
+
+        <ExpressiveCard variant="tonal" padding="lg" className="lg:col-span-2">
+          <CardLabel>Benchmark Delta</CardLabel>
+          <p className="mt-1 text-sm text-inkMuted">
+            XGBoost error against each baseline (lower is better)
+          </p>
+          <div className="mt-5 h-[190px]">
+            {loading ? (
+              <div className="flex h-full items-center justify-center">
+                <Loader2 className="h-7 w-7 animate-spin text-brand" />
+              </div>
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={data?.models ?? []}
+                  margin={{ top: 4, right: 8, left: 0, bottom: 0 }}
+                >
+                  <CartesianGrid vertical={false} strokeDasharray="2 6" stroke={theme.grid} />
+                  <XAxis
+                    dataKey="model_name"
+                    tick={{ fill: theme.muted, fontSize: 10, fontFamily: "JetBrains Mono" }}
+                    axisLine={false}
+                    tickLine={false}
+                  />
+                  <YAxis
+                    tick={{ fill: theme.muted, fontSize: 10, fontFamily: "JetBrains Mono" }}
+                    axisLine={false}
+                    tickLine={false}
+                    width={44}
+                    tickFormatter={(val) => formatNumber(Math.round(val / 1000)) + "k"}
+                  />
+                  <Tooltip
+                    cursor={{ fill: theme.grid, opacity: 0.4 }}
+                    content={({ active, payload }: any) => {
+                      if (!active || !payload?.length) return null;
+                      const m = payload[0].payload as ModelScore;
+                      return (
+                        <div className="rounded-2xl bg-surface/95 p-3 shadow-lifted ring-1 ring-borderSubtle/70 backdrop-blur">
+                          <p className="mb-1.5 text-xs font-semibold text-ink">{m.model_name}</p>
+                          <p className="num-tabular text-xs text-inkSecondary">
+                            MAE {formatMW(m.mae_mw)}
+                          </p>
+                          <p className="num-tabular text-xs text-inkSecondary">
+                            R² {m.r2_score.toFixed(4)}
+                          </p>
+                        </div>
+                      );
+                    }}
+                  />
+                  <Bar dataKey="mae_mw" radius={[10, 10, 4, 4]} maxBarSize={64}>
+                    {(data?.models ?? []).map((m) => (
+                      <Cell
+                        key={m.model_name}
+                        fill={m.model_name === "XGBoost" ? theme.brand : theme.brandBright}
+                        opacity={m.model_name === "XGBoost" ? 1 : 0.55}
+                      />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ResponsiveContainer>
+            )}
+          </div>
+          <div className="mt-4 flex items-center gap-2 text-[11px] text-inkMuted">
+            <Activity className="h-3.5 w-3.5" />
+            Mean absolute error on the holdout window, all entities
+          </div>
+        </ExpressiveCard>
+      </div>
     </div>
   );
 }
