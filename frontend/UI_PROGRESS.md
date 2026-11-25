@@ -15,15 +15,15 @@ Light mode is default; dark mode via `.dark` on `<html>`.
 - [x] `npm run build` green
 
 ## Phase 2 — M3 Expressive Component Library
-- [ ] `ExpressiveCard.tsx` (elevated | tonal | brand | obsidian)
-- [ ] `ConnectedButtonGroup.tsx` (spring shape-morph)
-- [ ] `WavySlider.tsx` (wave track + pill thumb)
-- [ ] `ExpressiveSwitch.tsx`
-- [ ] `ScallopBadge.tsx` (12-lobe)
-- [ ] `ExpressiveGauges.tsx` (`CircularTickRing`, `ConcentricArcGauge`)
-- [ ] `KPICard.tsx` upgrade
-- [ ] Recolor `Badge`, `Button`, `Select`, `Card`
-- [ ] `npm run build` green
+- [x] `ExpressiveCard.tsx` (elevated | tonal | brand | obsidian | outline)
+- [x] `ConnectedButtonGroup.tsx` (spring shape-morph)
+- [x] `WavySlider.tsx` (wave track + pill thumb)
+- [x] `ExpressiveSwitch.tsx`
+- [x] `ScallopBadge.tsx` (12-lobe)
+- [x] `ExpressiveGauges.tsx` (`CircularTickRing`, `ConcentricArcGauge`)
+- [x] `KPICard.tsx` upgrade
+- [x] Recolor `Badge`, `Button`, `Select`, `Card`
+- [x] `npm run build` green
 
 ## Phase 3 — App Shell & Floating Navigation
 - [ ] Floating pill command bar (monogram, 5 nav pills w/ layoutId, status pill, theme toggle)
@@ -56,3 +56,11 @@ Light mode is default; dark mode via `.dark` on `<html>`.
 - `tailwind.config.js` — darkMode class, steel token ramp, shadows
 - `src/index.css` — light/dark CSS variables, utilities
 - `package.json` — added `motion`
+- `src/components/ExpressiveCard.tsx` — new
+- `src/components/ConnectedButtonGroup.tsx` — new
+- `src/components/WavySlider.tsx` — new
+- `src/components/ExpressiveSwitch.tsx` — new
+- `src/components/ScallopBadge.tsx` — new
+- `src/components/ExpressiveGauges.tsx` — new
+- `src/components/KPICard.tsx` — upgraded (emphasis modes, display figures)
+- `src/components/{Badge,Button,Select,Card}.tsx` — recolored to steel ramp
