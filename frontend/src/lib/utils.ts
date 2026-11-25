@@ -48,3 +48,38 @@ export function debounce<T extends (...args: any[]) => any>(
     timeoutId = setTimeout(() => fn(...args), delay);
   };
 }
+/**
+ * Safe hour formatter — accepts ISO timestamps, bare "HH:mm[:ss]" strings and
+ * already-formatted "6:00 PM" strings. Never re-parses display text as a date.
+ */
+export function formatHourLabel(ts: string | undefined | null, hour12 = false): string {
+  if (!ts) return "--:--";
+  const s = String(ts).trim();
+  if (!s) return "--:--";
+
+  const ampm = /^(\d{1,2}):(\d{2})\s*([AP])\.?M\.?$/i.exec(s);
+  if (ampm) {
+    let h = Number(ampm[1]) % 12;
+    if (ampm[3].toUpperCase() === "P") h += 12;
+    if (hour12) return `${String(h % 12 || 12).padStart(2, "0")}:${ampm[2]} ${h < 12 ? "AM" : "PM"}`;
+    return `${String(h).padStart(2, "0")}:${ampm[2]}`;
+  }
+
+  const bare = /^(\d{1,2}):(\d{2})(?::\d{2})?$/.exec(s);
+  if (bare) {
+    const h = Number(bare[1]);
+    if (hour12) return `${String(h % 12 || 12).padStart(2, "0")}:${bare[2]} ${h < 12 ? "AM" : "PM"}`;
+    return `${String(h).padStart(2, "0")}:${bare[2]}`;
+  }
+
+  const d = new Date(s);
+  if (Number.isNaN(d.getTime())) return "--:--";
+  return d.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12 });
+}
+
+export function addHours(ts: string, hours: number): string {
+  const d = new Date(ts);
+  if (Number.isNaN(d.getTime())) return ts;
+  d.setHours(d.getHours() + hours);
+  return d.toISOString();
+}

@@ -32,11 +32,11 @@ Light mode is default; dark mode via `.dark` on `<html>`.
 - [x] `npm run build` green
 
 ## Phase 4 — Forecast & Peak-Charging views
-- [ ] `ForecastView.tsx` bento KPIs + simulator console + hero chart + insight strip
-- [ ] Bug: Invalid Date in tooltip fixed (`formatHourLabel`)
-- [ ] Bug: contiguous peak/optimal windows fixed
-- [ ] `PeakChargingView.tsx` 24 pill columns + side gauge panel
-- [ ] `npm run build` green
+- [x] `ForecastView.tsx` bento KPIs + simulator console + hero chart + insight strip
+- [x] Bug: Invalid Date in tooltip fixed (`formatHourLabel`)
+- [x] Bug: contiguous peak/optimal windows fixed
+- [x] `PeakChargingView.tsx` 24 pill columns + side gauge panel
+- [x] `npm run build` green
 
 ## Phase 5 — CEA, Carbon & Telemetry views
 - [ ] `CEAStateExplorerView.tsx`
@@ -65,3 +65,7 @@ Light mode is default; dark mode via `.dark` on `<html>`.
 - `src/components/KPICard.tsx` — upgraded (emphasis modes, display figures)
 - `src/components/{Badge,Button,Select,Card}.tsx` — recolored to steel ramp
 - `src/App.tsx` — floating pill command bar, theme toggle, live API badge, view transitions
+- `src/lib/utils.ts` — `formatHourLabel`, `addHours`
+- `src/lib/useChartTheme.ts` — new (theme-aware recharts colors)
+- `src/views/ForecastView.tsx` — bento KPIs, tonal what-if console, hero chart, insights; Invalid Date + inverted-window bugs fixed
+- `src/views/PeakChargingView.tsx` — pill-column tariff/load charts, tick-ring gauge, cost comparison, recommendations; double-format bug fixed
