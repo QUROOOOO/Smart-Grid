@@ -56,7 +56,7 @@ export function ConnectedButtonGroup({
               i === last && last > 0 ? "rounded-r-full rounded-l-[8px]" : "",
               i > 0 && i < last ? "rounded-[8px]" : "",
               selected
-                ? "text-white"
+                ? "text-onBrand"
                 : "bg-surfaceTonal text-inkSecondary hover:bg-surfaceHover hover:text-ink"
             )}
           >

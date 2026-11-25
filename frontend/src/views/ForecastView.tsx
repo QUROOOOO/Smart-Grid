@@ -409,8 +409,8 @@ export function ForecastView() {
             <ComposedChart data={chartData} margin={{ top: 12, right: 12, bottom: 4, left: 0 }}>
               <defs>
                 <linearGradient id="fcBand" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor={theme.brandBright} stopOpacity={0.35} />
-                  <stop offset="100%" stopColor={theme.brandBright} stopOpacity={0.05} />
+                  <stop offset="0%" stopColor={theme.brandBright} stopOpacity={0.22} />
+                  <stop offset="100%" stopColor={theme.brandBright} stopOpacity={0} />
                 </linearGradient>
               </defs>
               <CartesianGrid vertical={false} stroke={theme.grid} strokeDasharray="2 6" />
@@ -499,8 +499,8 @@ export function ForecastView() {
           <p className="mt-1 text-xs text-inkMuted">at predicted peak point</p>
         </ExpressiveCard>
         <ExpressiveCard variant="brand" padding="md">
-          <CardLabel className="text-white/70">Recommended Action</CardLabel>
-          <p className="mt-2 text-sm font-semibold leading-snug text-white">
+          <CardLabel className="text-onBrand/70">Recommended Action</CardLabel>
+          <p className="mt-2 text-sm font-semibold leading-snug text-onBrand">
             {peakAlert
               ? `Shift flexible load out of ${windows.peak?.label ?? "the peak window"} toward ${
                   windows.optimal?.label ?? "the optimal window"

@@ -24,7 +24,7 @@ function scallopPoints(lobes: number, outer = 50, inner = 43.5) {
 }
 
 const FILLS = {
-  brand: { poly: "rgb(var(--brand))", text: "text-white" },
+  brand: { poly: "rgb(var(--brand))", text: "text-onBrand" },
   obsidian: { poly: "rgb(var(--obsidian))", text: "text-canvas" },
   outline: { poly: "rgb(var(--surface-tonal))", text: "text-ink" },
 };

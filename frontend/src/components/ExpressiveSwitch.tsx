@@ -46,7 +46,7 @@ export function ExpressiveSwitch({
         <motion.span
           className={cn(
             "flex h-6 w-6 shrink-0 items-center justify-center rounded-full shadow-sm",
-            checked ? "bg-white text-[#1A394C]" : "bg-inkSecondary text-surface dark:text-[#0D0D0F]"
+            checked ? "bg-white text-[#22384A]" : "bg-inkSecondary text-surface dark:text-[#0D0D0F]"
           )}
           animate={{ x: checked ? 22 : 2 }}
           whileTap={{ scale: 1.16 }}
@@ -57,7 +57,7 @@ export function ExpressiveSwitch({
               <motion.path
                 d="M2.5 7.5L5.5 10.5L11.5 3.5"
                 fill="none"
-                stroke="#1A394C"
+                stroke="#22384A"
                 strokeWidth={2.6}
                 strokeLinecap="round"
                 strokeLinejoin="round"

@@ -13,7 +13,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       "inline-flex items-center justify-center rounded-full font-semibold transition-all duration-200 ease-expressive focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brandVivid focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
 
     const variants = {
-      primary: "bg-brand text-white shadow-pill hover:bg-brandHover hover:shadow-lifted",
+      primary: "bg-brand text-onBrand shadow-pill hover:bg-brandHover hover:shadow-lifted",
       secondary: "bg-surfaceTonal text-ink ring-1 ring-borderSubtle/60 hover:bg-surfaceHover",
       ghost: "text-inkSecondary hover:bg-surfaceTonal hover:text-ink",
       danger: "bg-ink text-canvas hover:opacity-90",

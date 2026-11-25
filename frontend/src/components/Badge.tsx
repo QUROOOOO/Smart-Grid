@@ -11,7 +11,7 @@ export function Badge({ children, variant = "default", size = "md", className }:
   const variants = {
     default: "bg-surfaceTonal text-inkSecondary ring-1 ring-borderSubtle/60",
     success: "bg-brandWash text-brand ring-1 ring-brand/20",
-    warning: "bg-brand text-white ring-1 ring-brandHover/40",
+    warning: "bg-brand text-onBrand ring-1 ring-brandHover/40",
     danger: "bg-ink text-canvas ring-1 ring-ink/20",
     info: "bg-brandWash text-brandVivid ring-1 ring-brand/15",
   };

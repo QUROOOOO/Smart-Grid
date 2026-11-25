@@ -81,7 +81,7 @@ export const WavySlider = forwardRef<HTMLInputElement, SliderProps>(
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={M3_FAST_SPATIAL}
-              className="num-tabular rounded-full bg-brand px-2.5 py-1 text-xs font-bold text-white shadow-pill dark:ring-1 dark:ring-brandVivid"
+              className="num-tabular rounded-full bg-brand px-2.5 py-1 text-xs font-bold text-onBrand shadow-pill dark:ring-1 dark:ring-brandVivid"
             >
               {value}
               {unit ? <span className="ml-0.5 font-medium opacity-80">{unit}</span> : null}

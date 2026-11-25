@@ -2,48 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Material 3 Expressive · Steel Blue tonal system ─────────────────────────
-   Single-hue discipline: #1A394C is used only for compact pills, active tabs,
-   sliders, switches, chart strokes and focal badges — never as a full-bleed
-   card fill. Surfaces stay pure white (light) or true obsidian (dark).       */
+/* ── Material 3 Expressive · Electric Sky-Blue tonal system ──────────────────
+   Vivid #3EB8FF fills always pair with dark-navy ink (#22384A light /
+   #081B26 dark) — never white text on bright blue. Surfaces stay icy white
+   (light) or true obsidian black (dark).                                      */
 :root {
-  --canvas: 244 245 246;        /* #F4F5F6 — 5% #1A394C tint in white */
+  --canvas: 242 248 255;        /* #F2F8FF — icy white with 5% sky tint */
   --surface: 255 255 255;       /* #FFFFFF — pure white bento */
-  --surface-tonal: 233 236 239; /* #E9ECEF — neutral cool light grey */
-  --surface-hover: 221 226 230; /* #DDE2E6 */
+  --surface-tonal: 227 240 252; /* #E3F0FC — soft sky-tinted container */
+  --surface-hover: 200 228 255; /* #C8E4FF — pastel sky hover */
 
-  --brand: 26 57 76;            /* #1A394C — punchy anchor */
-  --brand-hover: 18 40 54;      /* #122836 */
-  --brand-vivid: 34 83 112;     /* #234E68 — hover / active ring accent */
-  --brand-bright: 88 166 204;   /* #58A6CC — halos, gradients, secondary series */
-  --brand-wash: 227 238 244;    /* #E3EEF4 — soft filled chips */
-  --brand-rim: 59 120 158;      /* #3B789E — crisp rim on filled pills */
+  --brand: 62 184 255;          /* #3EB8FF — primary vivid sky blue */
+  --brand-hover: 28 174 255;    /* #1CAEFF — deeper punchy hover */
+  --on-brand: 34 56 74;         /* #22384A — dark navy ink inside brand fills */
+  --brand-container: 200 228 255;/* #C8E4FF — soft pastel container */
+  --on-brand-container: 34 56 74;/* #22384A — navy ink inside soft containers */
+  --brand-vivid: 62 184 255;    /* alias — active strokes */
+  --brand-bright: 62 184 255;   /* alias — series / gradients */
+  --brand-wash: 227 240 252;    /* soft filled chips */
+  --brand-rim: 34 56 74;        /* navy rim on filled pills */
 
-  --ink: 11 12 14;              /* #0B0C0E — true deep black */
-  --ink-secondary: 73 80 87;    /* #495057 */
-  --ink-muted: 124 133 141;     /* #7C858D */
-  --border: 223 228 232;        /* #DFE4E8 */
+  --ink: 17 24 32;              /* #111820 */
+  --ink-secondary: 34 56 74;    /* #22384A */
+  --ink-muted: 95 115 132;      /* #5F7384 */
+  --border: 214 230 245;        /* #D6E6F5 */
   --obsidian: 9 9 11;
 }
 
 .dark {
   --canvas: 0 0 0;              /* #000000 — pure black */
-  --surface: 13 13 15;          /* #0D0D0F — pure charcoal cards */
-  --surface-tonal: 24 24 27;    /* #18181B — neutral recessed */
+  --surface: 14 14 17;          /* #0E0E11 — neutral obsidian cards */
+  --surface-tonal: 23 23 27;    /* #17171B — neutral recessed */
   --surface-hover: 35 35 41;    /* #232329 */
 
-  --brand: 26 57 76;            /* #1A394C — filled pills with white text */
-  --brand-hover: 18 40 54;
-  --brand-vivid: 58 130 173;    /* #3A82AD — luminous 203° accent */
-  --brand-bright: 140 200 230;  /* #8CC8E6 */
-  --brand-wash: 23 32 39;       /* #172027 */
-  --brand-rim: 59 120 158;      /* #3B789E */
+  --brand: 62 184 255;          /* #3EB8FF */
+  --brand-hover: 90 196 255;    /* #5AC4FF */
+  --on-brand: 8 27 38;          /* #081B26 */
+  --brand-container: 20 42 56;  /* #142A38 — small badges only */
+  --on-brand-container: 140 213 255; /* #8CD5FF */
+  --brand-vivid: 62 184 255;
+  --brand-bright: 140 213 255;
+  --brand-wash: 20 42 56;
+  --brand-rim: 62 184 255;
 
   --ink: 250 250 250;           /* #FAFAFA */
-  --ink-secondary: 161 161 170; /* #A1A1AA */
+  --ink-secondary: 176 184 193; /* #B0B8C1 */
   --ink-muted: 113 113 122;     /* #71717A */
-  --border: 38 38 43;           /* #26262B */
-  --obsidian: 250 250 250;      /* inverse tile flips to near-white in dark */
+  --border: 36 36 41;           /* #242429 */
+  --obsidian: 250 250 250;
 }
 
 @layer base {

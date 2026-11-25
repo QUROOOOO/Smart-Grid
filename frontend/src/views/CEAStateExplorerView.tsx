@@ -209,7 +209,7 @@ export function CEAStateExplorerView() {
                 <ComposedChart data={trend} margin={{ top: 16, right: 18, left: 0, bottom: 0 }}>
                   <defs>
                     <linearGradient id="ceaArea" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor={theme.brand} stopOpacity={0.18} />
+                      <stop offset="0%" stopColor={theme.brand} stopOpacity={0.22} />
                       <stop offset="100%" stopColor={theme.brand} stopOpacity={0} />
                     </linearGradient>
                   </defs>
@@ -341,7 +341,7 @@ export function CEAStateExplorerView() {
                   className="flex h-full items-center justify-end rounded-full bg-brand px-3 transition-[width] duration-500 ease-expressive"
                   style={{ width: `${Math.max((s.deficit_mw / maxDeficit) * 100, 6)}%` }}
                 >
-                  <span className="num-tabular text-[11px] font-semibold text-white">
+                  <span className="num-tabular text-[11px] font-semibold text-onBrand">
                     {formatNumber(Math.round(s.deficit_mw))}
                   </span>
                 </div>

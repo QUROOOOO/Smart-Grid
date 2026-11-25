@@ -111,7 +111,7 @@ export function App() {
                   aria-current={active ? "page" : undefined}
                   className={cn(
                     "group relative flex flex-shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-semibold outline-none transition-colors duration-200",
-                    active ? "text-white" : "text-inkSecondary hover:text-ink"
+                    active ? "text-onBrand" : "text-inkSecondary hover:text-ink"
                   )}
                 >
                   {active && (
@@ -137,19 +137,19 @@ export function App() {
               className={cn(
                 "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[10px] font-bold uppercase tracking-[0.1em]",
                 apiMode === "live"
-                  ? "bg-brand text-white shadow-pill"
+                  ? "bg-brand text-onBrand shadow-pill"
                   : "bg-surfaceTonal text-inkSecondary ring-1 ring-borderSubtle/60"
               )}
               title={apiMode === "live" ? "Connected to FastAPI backend" : "Serving deterministic mock data"}
             >
               <span className="relative flex h-1.5 w-1.5">
                 {apiMode === "live" && (
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white/70" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-onBrand/60" />
                 )}
                 <span
                   className={cn(
                     "relative inline-flex h-1.5 w-1.5 rounded-full",
-                    apiMode === "live" ? "bg-white" : "bg-inkMuted"
+                    apiMode === "live" ? "bg-onBrand" : "bg-inkMuted"
                   )}
                 />
               </span>

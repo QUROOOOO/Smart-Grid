@@ -15,7 +15,7 @@ export interface ExpressiveCardProps extends HTMLAttributes<HTMLDivElement> {
 const VARIANTS: Record<ExpressiveCardVariant, string> = {
   elevated: "bg-surface text-ink shadow-soft ring-1 ring-borderSubtle/60",
   tonal: "bg-surfaceTonal text-ink ring-1 ring-borderSubtle/40",
-  brand: "bg-brand text-white shadow-lifted ring-1 ring-brandRim/40",
+  brand: "bg-brand text-onBrand shadow-lifted ring-1 ring-brandRim/40",
   obsidian: "bg-obsidian text-canvas shadow-lifted ring-1 ring-obsidian/20",
   outline: "bg-transparent text-ink ring-1 ring-borderSubtle",
 };

@@ -344,29 +344,29 @@ export function PeakChargingView() {
           </ExpressiveCard>
 
           <ExpressiveCard variant="brand" padding="lg">
-            <CardLabel className="text-white/70">Cost Comparison</CardLabel>
+            <CardLabel className="text-onBrand/70">Cost Comparison</CardLabel>
             <div className="mt-3 space-y-3">
               <div>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-sm text-white/70">Baseline</span>
-                  <span className="num-tabular font-mono text-sm font-semibold text-white">
+                  <span className="text-sm text-onBrand/70">Baseline</span>
+                  <span className="num-tabular font-mono text-sm font-semibold text-onBrand">
                     {formatCurrency(data?.total_baseline_cost_inr || 0)}
                   </span>
                 </div>
-                <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-white/20">
-                  <div className="h-full w-full rounded-full bg-white/60" />
+                <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-onBrand/15">
+                  <div className="h-full w-full rounded-full bg-onBrand/45" />
                 </div>
               </div>
               <div>
                 <div className="flex items-baseline justify-between">
-                  <span className="text-sm text-white/70">Optimised</span>
-                  <span className="num-tabular font-mono text-sm font-semibold text-white">
+                  <span className="text-sm text-onBrand/70">Optimised</span>
+                  <span className="num-tabular font-mono text-sm font-semibold text-onBrand">
                     {formatCurrency(data?.total_optimized_cost_inr || 0)}
                   </span>
                 </div>
-                <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-white/20">
+                <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-onBrand/15">
                   <motion.div
-                    className="h-full rounded-full bg-white"
+                    className="h-full rounded-full bg-onBrand"
                     initial={false}
                     animate={{
                       width: `${
@@ -383,9 +383,9 @@ export function PeakChargingView() {
                 </div>
               </div>
             </div>
-            <div className="mt-4 flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5">
-              <TrendingDown className="h-4 w-4 text-white" />
-              <span className="num-tabular text-sm font-semibold text-white">
+            <div className="mt-4 flex items-center gap-2 rounded-full bg-onBrand/10 px-3 py-1.5">
+              <TrendingDown className="h-4 w-4 text-onBrand" />
+              <span className="num-tabular text-sm font-semibold text-onBrand">
                 {formatPercentage(savingsPct)} saved
               </span>
             </div>
