@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useState, useEffect, useMemo } from "react";
 import {
   BarChart,
@@ -26,6 +27,7 @@ import {
   cn,
 } from "../lib/utils";
 import { useChartTheme } from "../lib/useChartTheme";
+import { M3_SPRING_SLOW_SPATIAL } from "../lib/motion";
 import { TrendingUp, Award, Loader2, Brain, Target, Activity } from "lucide-react";
 
 const REGION_OPTIONS = [
@@ -92,7 +94,7 @@ export function ModelTelemetryView() {
   const maxImportance = shap.length ? Math.max(...shap.map((f) => f.importance)) : 1;
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 m3-stagger">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="font-display text-[26px] font-extrabold tracking-tight text-ink">
@@ -111,7 +113,7 @@ export function ModelTelemetryView() {
         <KPICard
           label="Active Model"
           value={bestModel?.model_name || "—"}
-          emphasis="brand"
+          emphasis="default"
           hint={bestModel ? `R² ${bestModel.r2_score.toFixed(4)}` : undefined}
           icon={<Award className="h-5 w-5" />}
         />
@@ -231,9 +233,11 @@ export function ModelTelemetryView() {
                       </span>
                     </div>
                     <div className="h-2.5 overflow-hidden rounded-full bg-surface">
-                      <div
-                        className="h-full rounded-full bg-brand transition-all duration-500"
-                        style={{ width: `${pct}%`, opacity: 1 - i * 0.055 }}
+                      <motion.div
+                        className="h-full rounded-full bg-brand dark:bg-brandVivid"
+                        initial={false}
+                        animate={{ width: `${pct}%`, opacity: 1 - i * 0.055 }}
+                        transition={M3_SPRING_SLOW_SPATIAL}
                       />
                     </div>
                   </div>

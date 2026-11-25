@@ -133,7 +133,7 @@ export function CEAStateExplorerView() {
   const peakMetPct = mayPeak ? (mayPeak.peak_met_mw / mayPeak.peak_demand_mw) * 100 : 0;
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 m3-stagger">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="font-display text-[26px] font-extrabold tracking-tight text-ink">
@@ -154,7 +154,7 @@ export function CEAStateExplorerView() {
           value={mayPeak ? formatNumber(Math.round(mayPeak.peak_demand_mw)) : "—"}
           unit="MW"
           hint="National coincident peak"
-          emphasis="brand"
+          emphasis="default"
           icon={<TrendingUp className="h-5 w-5" />}
         />
         <KPICard

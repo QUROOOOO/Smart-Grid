@@ -55,9 +55,10 @@ export function CarbonScorecardView() {
   const [tempDelta, setTempDelta] = useState(0);
   const [humidityDelta, setHumidityDelta] = useState(0);
   const [facilityMw, setFacilityMw] = useState(10);
-  const [shiftablePct, setShiftablePct] = useState(25);
+  const [shiftablePct, setShiftablePct] = useState(15);
   const [solarCapacityMw, setSolarCapacityMw] = useState(2);
   const [batteryCapacityMwh] = useState(4);
+  const [efficiencyPct, setEfficiencyPct] = useState(10);
   const [baseTariff, setBaseTariff] = useState(7.5);
   const [apiMode, setApiMode] = useState<"live" | "mock">("mock");
 
@@ -115,7 +116,7 @@ export function CarbonScorecardView() {
     const baseline = summary.baseline_emissions_tco2;
     const peakShaving = baseline * 0.3 * (shiftablePct / 100) * OM_FACTOR * 0.4;
     const renewableShift = baseline * 0.2 * (solarCapacityMw / (facilityMw || 1)) * CM_FACTOR;
-    const efficiencyGain = baseline * 0.15 * (shiftablePct / 100) * WA_FACTOR;
+    const efficiencyGain = baseline * (efficiencyPct / 100) * WA_FACTOR;
     const total = peakShaving + renewableShift + efficiencyGain;
     return [
       {
@@ -137,10 +138,10 @@ export function CarbonScorecardView() {
         fullName: `Efficiency Gain · ${WA_FACTOR} tCO₂/MWh`,
       },
     ].map((item) => ({ ...item, pct: total > 0 ? (item.value / total) * 100 : 0 }));
-  }, [summary, shiftablePct, solarCapacityMw, facilityMw, theme]);
+  }, [summary, shiftablePct, solarCapacityMw, facilityMw, efficiencyPct, theme]);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 m3-stagger">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="font-display text-[26px] font-extrabold tracking-tight text-ink">
@@ -174,7 +175,7 @@ export function CarbonScorecardView() {
           label="Abated CO₂"
           value={formatNumber(summary?.abated_tco2 ?? 0, 2)}
           unit="tCO₂/day"
-          emphasis="brand"
+          emphasis="default"
           hint={`${formatPercentage(abatementPct)} below baseline`}
           icon={<Zap className="h-5 w-5" />}
         />
@@ -418,17 +419,15 @@ export function CarbonScorecardView() {
               step={5}
               unit="%"
             />
-            <div className={cn("opacity-50")}>
-              <WavySlider
-                label="Efficiency Gain"
-                value={0}
-                onChange={() => {}}
-                min={0}
-                max={20}
-                step={5}
-                unit="%"
-              />
-            </div>
+            <WavySlider
+              label="Efficiency Gain"
+              value={efficiencyPct}
+              onChange={setEfficiencyPct}
+              min={0}
+              max={20}
+              step={5}
+              unit="%"
+            />
           </div>
           <p className="mt-4 text-[11px] leading-relaxed text-inkMuted">
             Peak Shaving @ {OM_FACTOR} · Renewable @ {CM_FACTOR} · Efficiency @ {WA_FACTOR} tCO₂/MWh

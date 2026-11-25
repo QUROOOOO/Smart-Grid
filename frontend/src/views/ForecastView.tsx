@@ -221,7 +221,7 @@ export function ForecastView() {
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 m3-stagger">
       <div className="flex flex-wrap items-end justify-between gap-4 px-1">
         <div>
           <h1 className="font-display text-[26px] font-extrabold tracking-tight text-ink">
@@ -253,7 +253,7 @@ export function ForecastView() {
           label="Predicted Peak Load"
           value={formatNumber(Math.round(predictedPeak))}
           unit="MW"
-          emphasis="brand"
+          emphasis="default"
           icon={<Zap className="h-5 w-5" />}
           hint={
             capacityRef > 0

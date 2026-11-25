@@ -1,6 +1,7 @@
 import { useId, type ReactNode } from "react";
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
+import { M3_SPRING_FAST_SPATIAL } from "../lib/motion";
 
 export interface ConnectedOption {
   value: string;
@@ -17,8 +18,6 @@ export interface ConnectedButtonGroupProps {
   ariaLabel?: string;
 }
 
-const SPRING = { type: "spring", stiffness: 380, damping: 28, mass: 0.9 } as const;
-
 export function ConnectedButtonGroup({
   options,
   value,
@@ -28,6 +27,7 @@ export function ConnectedButtonGroup({
   ariaLabel,
 }: ConnectedButtonGroupProps) {
   const layoutId = useId();
+  const selectedIndex = options.findIndex((o) => o.value === value);
 
   return (
     <div
@@ -38,17 +38,21 @@ export function ConnectedButtonGroup({
         className
       )}
     >
-      {options.map((opt) => {
+      {options.map((opt, i) => {
         const selected = opt.value === value;
+        const neighbor = Math.abs(i - selectedIndex) === 1;
         return (
-          <button
+          <motion.button
             key={opt.value}
             role="radio"
             aria-checked={selected}
             onClick={() => onChange(opt.value)}
+            animate={{ scaleX: selected ? 1.04 : neighbor ? 0.96 : 1 }}
+            whileTap={{ scaleX: 0.94 }}
+            transition={M3_SPRING_FAST_SPATIAL}
+            style={{ transformOrigin: "center" }}
             className={cn(
-              "relative flex items-center justify-center gap-1.5 font-semibold whitespace-nowrap outline-none",
-              "transition-colors duration-200",
+              "relative flex items-center justify-center gap-1.5 whitespace-nowrap font-semibold outline-none",
               size === "sm" ? "px-3 py-1.5 text-xs" : "px-4 py-2 text-sm",
               selected ? "text-white" : "text-inkSecondary hover:text-ink"
             )}
@@ -56,7 +60,8 @@ export function ConnectedButtonGroup({
             {selected && (
               <motion.span
                 layoutId={layoutId}
-                transition={SPRING}
+                transition={M3_SPRING_FAST_SPATIAL}
+                animate={{ borderRadius: 9999 }}
                 className="absolute inset-0 rounded-full bg-brand shadow-pill"
               />
             )}
@@ -64,7 +69,7 @@ export function ConnectedButtonGroup({
               {opt.icon}
               {opt.label}
             </span>
-          </button>
+          </motion.button>
         );
       })}
     </div>

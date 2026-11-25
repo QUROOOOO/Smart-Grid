@@ -3,44 +3,47 @@
 @tailwind utilities;
 
 /* ── Material 3 Expressive · Steel Blue tonal system ─────────────────────────
-   Single-hue ramp derived from #1A394C (H 199° · S 49% · L 20%).
-   Vivid steps exist so the UI feels alive without importing foreign hues.   */
+   Single-hue discipline: #1A394C is used only for compact pills, active tabs,
+   sliders, switches, chart strokes and focal badges — never as a full-bleed
+   card fill. Surfaces stay pure white (light) or true obsidian (dark).       */
 :root {
-  --canvas: 244 245 246;        /* #F4F5F6 — 5% #1A394C in white */
-  --surface: 255 255 255;       /* pure white bento */
-  --surface-tonal: 232 235 237; /* #E8EBED — 10% tint */
-  --surface-hover: 220 225 229; /* #DCE1E5 — 18% tint */
+  --canvas: 244 245 246;        /* #F4F5F6 — 5% #1A394C tint in white */
+  --surface: 255 255 255;       /* #FFFFFF — pure white bento */
+  --surface-tonal: 233 236 239; /* #E9ECEF — neutral cool light grey */
+  --surface-hover: 221 226 230; /* #DDE2E6 */
 
-  --brand: 26 57 76;            /* #1A394C — anchor */
+  --brand: 26 57 76;            /* #1A394C — punchy anchor */
   --brand-hover: 18 40 54;      /* #122836 */
-  --brand-vivid: 46 110 146;    /* #2E6E92 — saturated accent for charts/focus */
+  --brand-vivid: 35 78 104;     /* #234E68 — hover / active ring accent */
   --brand-bright: 88 166 204;   /* #58A6CC — halos, gradients, secondary series */
-  --brand-wash: 227 238 244;    /* #E3EEF4 — filled soft surfaces */
+  --brand-wash: 227 238 244;    /* #E3EEF4 — soft filled chips */
+  --brand-rim: 59 120 158;      /* #3B789E — crisp rim on filled pills */
 
-  --ink: 17 20 23;              /* #111417 */
+  --ink: 9 9 11;                /* #09090B — true deep black */
   --ink-secondary: 74 82 90;    /* #4A525A */
   --ink-muted: 124 133 141;     /* #7C858D */
-  --border: 223 228 232;        /* #DFE4E8 */
-  --obsidian: 17 20 23;
+  --border: 225 229 232;        /* #E1E5E8 */
+  --obsidian: 9 9 11;
 }
 
 .dark {
-  --canvas: 11 13 15;           /* #0B0D0F */
-  --surface: 20 24 28;          /* #14181C */
-  --surface-tonal: 30 36 42;    /* #1E242A */
-  --surface-hover: 40 48 56;    /* #283038 */
+  --canvas: 0 0 0;              /* #000000 — pure black */
+  --surface: 14 14 17;          /* #0E0E11 — true obsidian cards */
+  --surface-tonal: 24 24 28;    /* #18181C — neutral recessed */
+  --surface-hover: 35 35 41;    /* #232329 */
 
-  --brand: 26 57 76;
+  --brand: 26 57 76;            /* #1A394C — filled pills with white text */
   --brand-hover: 18 40 54;
-  --brand-vivid: 92 163 200;    /* #5CA3C8 — lifted for dark surfaces */
+  --brand-vivid: 78 149 194;    /* #4E95C2 — vivid 203° accent for charts/sliders */
   --brand-bright: 140 200 230;  /* #8CC8E6 */
-  --brand-wash: 24 40 52;       /* #182834 */
+  --brand-wash: 23 32 39;       /* #172027 */
+  --brand-rim: 59 120 158;      /* #3B789E */
 
-  --ink: 255 255 255;
-  --ink-secondary: 166 176 184; /* #A6B0B8 */
-  --ink-muted: 110 120 128;     /* #6E7880 */
-  --border: 37 44 51;           /* #252C33 */
-  --obsidian: 255 255 255;      /* inverse tile flips to white in dark */
+  --ink: 250 250 250;           /* #FAFAFA */
+  --ink-secondary: 161 161 170; /* #A1A1AA */
+  --ink-muted: 113 113 122;     /* #71717A */
+  --border: 36 36 41;           /* #242429 */
+  --obsidian: 250 250 250;      /* inverse tile flips to near-white in dark */
 }
 
 @layer base {
@@ -57,6 +60,26 @@
   ::selection {
     background-color: rgb(var(--brand) / 0.22);
     color: rgb(var(--ink));
+  }
+}
+
+@layer components {
+  /* Material Symbols Rounded — variable axes, springy fill morph */
+  .material-symbols-rounded {
+    font-family: "Material Symbols Rounded";
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+    transition: font-variation-settings 260ms cubic-bezier(0.34, 1.4, 0.5, 1);
   }
 }
 
@@ -87,7 +110,7 @@
   }
 }
 
-/* Scrollbars — steel tinted */
+/* Scrollbars — neutral, never blue-tinted */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -103,7 +126,31 @@
   background: rgb(var(--ink-muted) / 0.55);
 }
 
-/* Native range input fallback (kept neutral until WavySlider replaces it) */
+/* Native range input fallback */
 input[type="range"] {
   accent-color: rgb(var(--brand));
 }
+
+/* ── M3E staggered card entrance (35ms per child) ───────────────────────── */
+@keyframes m3-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.m3-stagger > * {
+  animation: m3-rise 460ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+.m3-stagger > *:nth-child(1) { animation-delay: 0ms; }
+.m3-stagger > *:nth-child(2) { animation-delay: 35ms; }
+.m3-stagger > *:nth-child(3) { animation-delay: 70ms; }
+.m3-stagger > *:nth-child(4) { animation-delay: 105ms; }
+.m3-stagger > *:nth-child(5) { animation-delay: 140ms; }
+.m3-stagger > *:nth-child(6) { animation-delay: 175ms; }
+.m3-stagger > *:nth-child(7) { animation-delay: 210ms; }
+.m3-stagger > *:nth-child(8) { animation-delay: 245ms; }
+.m3-stagger > *:nth-child(n + 9) { animation-delay: 280ms; }

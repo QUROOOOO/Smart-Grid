@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Cell } from "recharts";
 import { getApiClient } from "../services/apiClient";
@@ -17,6 +18,7 @@ import {
   debounce,
 } from "../lib/utils";
 import { useChartTheme } from "../lib/useChartTheme";
+import { M3_SPRING_SLOW_SPATIAL } from "../lib/motion";
 import { Battery, TrendingUp, TrendingDown, DollarSign, Loader2, ArrowRight, Sun } from "lucide-react";
 
 const ZONE_LABELS: Record<string, string> = {
@@ -159,7 +161,7 @@ export function PeakChargingView() {
   };
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-5 m3-stagger">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
           <h2 className="font-display text-[26px] font-extrabold tracking-tight text-ink">
@@ -201,7 +203,7 @@ export function PeakChargingView() {
         <KPICard
           label="Total Savings"
           value={formatCurrency(data?.total_savings_inr || 0)}
-          emphasis="brand"
+          emphasis="default"
           hint={`${savingsPct.toFixed(1)}% below baseline`}
           icon={<TrendingUp className="h-5 w-5" />}
         />
@@ -363,9 +365,10 @@ export function PeakChargingView() {
                   </span>
                 </div>
                 <div className="mt-1.5 h-2.5 w-full overflow-hidden rounded-full bg-white/20">
-                  <div
-                    className="h-full rounded-full bg-white transition-all duration-500"
-                    style={{
+                  <motion.div
+                    className="h-full rounded-full bg-white"
+                    initial={false}
+                    animate={{
                       width: `${
                         data && data.total_baseline_cost_inr > 0
                           ? Math.max(
@@ -375,6 +378,7 @@ export function PeakChargingView() {
                           : 0
                       }%`,
                     }}
+                    transition={M3_SPRING_SLOW_SPATIAL}
                   />
                 </div>
               </div>
@@ -459,12 +463,12 @@ export function PeakChargingView() {
                   <span className="num-tabular font-mono text-inkMuted">{count}h</span>
                 </div>
                 <div className="h-2.5 w-full overflow-hidden rounded-full bg-surface">
-                  <div
-                    className="h-full rounded-full transition-all duration-500"
-                    style={{
-                      width: `${(count / (data?.horizon_hours || 1)) * 100}%`,
-                      backgroundColor: zoneColor(zone),
-                    }}
+                  <motion.div
+                    className="h-full rounded-full"
+                    initial={false}
+                    animate={{ width: `${(count / (data?.horizon_hours || 1)) * 100}%` }}
+                    transition={M3_SPRING_SLOW_SPATIAL}
+                    style={{ backgroundColor: zoneColor(zone) }}
                   />
                 </div>
               </div>

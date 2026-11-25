@@ -1,5 +1,7 @@
 import { forwardRef, type HTMLAttributes } from "react";
+import { motion } from "motion/react";
 import { cn } from "../lib/utils";
+import { M3_SPRING_DEFAULT_SPATIAL } from "../lib/motion";
 
 export type ExpressiveCardVariant = "elevated" | "tonal" | "brand" | "obsidian" | "outline";
 
@@ -7,12 +9,13 @@ export interface ExpressiveCardProps extends HTMLAttributes<HTMLDivElement> {
   variant?: ExpressiveCardVariant;
   padding?: "none" | "sm" | "md" | "lg";
   interactive?: boolean;
+  staggerIndex?: number;
 }
 
 const VARIANTS: Record<ExpressiveCardVariant, string> = {
   elevated: "bg-surface text-ink shadow-soft ring-1 ring-borderSubtle/60",
   tonal: "bg-surfaceTonal text-ink ring-1 ring-borderSubtle/40",
-  brand: "bg-brand text-white shadow-lifted ring-1 ring-brandHover/40",
+  brand: "bg-brand text-white shadow-lifted ring-1 ring-brandRim/40",
   obsidian: "bg-obsidian text-canvas shadow-lifted ring-1 ring-obsidian/20",
   outline: "bg-transparent text-ink ring-1 ring-borderSubtle",
 };
@@ -25,20 +28,27 @@ const PADDING = {
 };
 
 export const ExpressiveCard = forwardRef<HTMLDivElement, ExpressiveCardProps>(
-  ({ variant = "elevated", padding = "md", interactive = false, className, children, ...props }, ref) => (
-    <div
+  (
+    { variant = "elevated", padding = "md", interactive = false, staggerIndex, className, children, ...props },
+    ref
+  ) => (
+    <motion.div
       ref={ref}
+      initial={staggerIndex === undefined ? false : { opacity: 0, y: 12 }}
+      animate={staggerIndex === undefined ? undefined : { opacity: 1, y: 0 }}
+      transition={{ ...M3_SPRING_DEFAULT_SPATIAL, delay: (staggerIndex ?? 0) * 0.035 }}
+      whileTap={interactive ? { scale: 0.985 } : undefined}
       className={cn(
-        "rounded-[28px] transition-all duration-300 ease-expressive",
+        "rounded-[28px] transition-colors duration-300",
         VARIANTS[variant],
         PADDING[padding],
-        interactive && "hover:-translate-y-0.5 hover:shadow-lifted cursor-pointer",
+        interactive && "cursor-pointer hover:shadow-lifted",
         className
       )}
-      {...props}
+      {...(props as any)}
     >
       {children}
-    </div>
+    </motion.div>
   )
 );
 ExpressiveCard.displayName = "ExpressiveCard";

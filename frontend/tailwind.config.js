@@ -15,6 +15,7 @@ export default {
         brandVivid: "rgb(var(--brand-vivid) / <alpha-value>)",
         brandBright: "rgb(var(--brand-bright) / <alpha-value>)",
         brandWash: "rgb(var(--brand-wash) / <alpha-value>)",
+        brandRim: "rgb(var(--brand-rim) / <alpha-value>)",
 
         ink: "rgb(var(--ink) / <alpha-value>)",
         inkSecondary: "rgb(var(--ink-secondary) / <alpha-value>)",

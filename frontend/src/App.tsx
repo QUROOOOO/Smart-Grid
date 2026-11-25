@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import {
-  Activity,
-  BarChart3,
-  BatteryCharging,
-  BrainCircuit,
-  Leaf,
-  LineChart,
-  Moon,
-  Sun,
-} from "lucide-react";
+import { M3Icon } from "./components/M3Icon";
+import { GridPulseMark } from "./components/GridPulseMark";
+import { M3_SPRING_DEFAULT_SPATIAL } from "./lib/motion";
 import { ForecastView } from "./views/ForecastView";
 import { PeakChargingView } from "./views/PeakChargingView";
 import { CEAStateExplorerView } from "./views/CEAStateExplorerView";
@@ -21,15 +14,15 @@ import { getApiClient } from "./services/apiClient";
 type ViewType = "forecast" | "peak-charging" | "cea-explorer" | "carbon-scorecard" | "model-telemetry";
 type Theme = "light" | "dark";
 
-const NAV_ITEMS: { id: ViewType; label: string; short: string; icon: React.ReactNode }[] = [
-  { id: "forecast", label: "Forecast", short: "Forecast", icon: <LineChart className="h-[18px] w-[18px]" /> },
-  { id: "peak-charging", label: "Charging", short: "Charging", icon: <BatteryCharging className="h-[18px] w-[18px]" /> },
-  { id: "cea-explorer", label: "CEA 2026", short: "CEA", icon: <BarChart3 className="h-[18px] w-[18px]" /> },
-  { id: "carbon-scorecard", label: "Carbon", short: "Carbon", icon: <Leaf className="h-[18px] w-[18px]" /> },
-  { id: "model-telemetry", label: "Model", short: "Model", icon: <BrainCircuit className="h-[18px] w-[18px]" /> },
+const NAV_ITEMS: { id: ViewType; label: string; short: string; icon: string }[] = [
+  { id: "forecast", label: "Forecast", short: "Forecast", icon: "bolt" },
+  { id: "peak-charging", label: "Charging", short: "Charging", icon: "ev_station" },
+  { id: "cea-explorer", label: "CEA 2026", short: "CEA", icon: "bar_chart_4_bars" },
+  { id: "carbon-scorecard", label: "Carbon", short: "Carbon", icon: "eco" },
+  { id: "model-telemetry", label: "Model", short: "Model", icon: "neurology" },
 ];
 
-const SPRING = { type: "spring", stiffness: 380, damping: 28, mass: 0.9 } as const;
+const SPRING = M3_SPRING_DEFAULT_SPATIAL;
 
 function renderView(view: ViewType) {
   switch (view) {
@@ -95,9 +88,7 @@ export function App() {
         <div className="mx-auto flex max-w-[1560px] flex-wrap items-center gap-2 rounded-[26px] bg-surface/85 px-3 py-2 shadow-pill ring-1 ring-borderSubtle/70 backdrop-blur-xl sm:rounded-full">
           {/* Monogram */}
           <div className="flex items-center gap-2.5 pl-1 pr-1">
-            <div className="grid h-9 w-9 place-items-center rounded-[13px] bg-brand font-display text-[13px] font-extrabold tracking-tight text-white shadow-pill">
-              GP
-            </div>
+            <GridPulseMark size={38} />
             <div className="hidden leading-none sm:block">
               <p className="font-display text-[15px] font-extrabold tracking-tight text-ink">GridPulse</p>
               <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-inkMuted">
@@ -119,7 +110,7 @@ export function App() {
                   onClick={() => setActiveView(item.id)}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative flex flex-shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-semibold outline-none transition-colors duration-200",
+                    "group relative flex flex-shrink-0 items-center gap-1.5 rounded-full px-3.5 py-2 text-[13px] font-semibold outline-none transition-colors duration-200",
                     active ? "text-white" : "text-inkSecondary hover:text-ink"
                   )}
                 >
@@ -131,7 +122,7 @@ export function App() {
                     />
                   )}
                   <span className="relative z-10 flex items-center gap-1.5">
-                    {item.icon}
+                    <M3Icon name={item.icon} size={20} filled={active} />
                     <span className="hidden md:inline">{item.label}</span>
                     <span className="md:hidden">{item.short}</span>
                   </span>
@@ -170,7 +161,7 @@ export function App() {
               aria-label="Toggle color theme"
               className="grid h-9 w-9 place-items-center rounded-full bg-surfaceTonal text-inkSecondary ring-1 ring-borderSubtle/60 transition-colors hover:bg-surfaceHover hover:text-ink"
             >
-              {theme === "dark" ? <Sun className="h-[17px] w-[17px]" /> : <Moon className="h-[17px] w-[17px]" />}
+              <M3Icon name={theme === "dark" ? "light_mode" : "dark_mode"} size={20} filled />
             </button>
           </div>
         </div>
@@ -184,7 +175,7 @@ export function App() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
-            transition={{ duration: 0.2, ease: [0.34, 1.2, 0.5, 1] }}
+            transition={M3_SPRING_DEFAULT_SPATIAL}
           >
             {renderView(activeView)}
           </motion.div>
@@ -192,7 +183,7 @@ export function App() {
 
         <footer className="mt-10 flex flex-wrap items-center justify-between gap-2 border-t border-borderSubtle/70 pt-4 text-[11px] text-inkMuted">
           <span className="inline-flex items-center gap-1.5">
-            <Activity className="h-3.5 w-3.5" />
+            <M3Icon name="verified" size={14} />
             GridPulse · Smart Grid Demand Forecasting &amp; Carbon Abatement
           </span>
           <span>CEA CO₂ Baseline Database v22.0 · 2026</span>

@@ -14,23 +14,23 @@ export interface ChartTheme {
 const LIGHT: ChartTheme = {
   brand: "#1A394C",
   brandBright: "#58A6CC",
-  brandVivid: "#2E6E92",
-  ink: "#111417",
+  brandVivid: "#234E68",
+  ink: "#09090B",
   muted: "#7C858D",
-  grid: "#DFE4E8",
+  grid: "#E1E5E8",
   surface: "#FFFFFF",
-  tonal: "#E8EBED",
+  tonal: "#E9ECEF",
 };
 
 const DARK: ChartTheme = {
-  brand: "#5CA3C8",
+  brand: "#4E95C2",
   brandBright: "#8CC8E6",
-  brandVivid: "#7FBCD9",
-  ink: "#FFFFFF",
-  muted: "#6E7880",
-  grid: "#252C33",
-  surface: "#14181C",
-  tonal: "#1E242A",
+  brandVivid: "#4E95C2",
+  ink: "#FAFAFA",
+  muted: "#71717A",
+  grid: "#242429",
+  surface: "#0E0E11",
+  tonal: "#18181C",
 };
 
 export function useChartTheme(): ChartTheme {

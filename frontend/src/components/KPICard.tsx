@@ -1,4 +1,5 @@
 import { cn } from "../lib/utils";
+import { AnimatedNumber } from "./AnimatedNumber";
 
 export type KPICardEmphasis = "default" | "brand" | "obsidian" | "tonal";
 
@@ -17,7 +18,7 @@ export interface KPICardProps {
 const SHELL: Record<KPICardEmphasis, string> = {
   default: "bg-surface text-ink shadow-soft ring-1 ring-borderSubtle/60",
   tonal: "bg-surfaceTonal text-ink ring-1 ring-borderSubtle/40",
-  brand: "bg-brand text-white shadow-lifted ring-1 ring-brandHover/40",
+  brand: "bg-brand text-white shadow-lifted ring-1 ring-brandRim/50",
   obsidian: "bg-obsidian text-canvas shadow-lifted",
 };
 
@@ -63,7 +64,15 @@ export function KPICard({
             {label}
           </p>
           <div className="mt-2 flex items-baseline gap-1.5">
-            <span className="display-figure num-tabular text-[1.9rem] leading-none">{value}</span>
+            {typeof value === "number" ? (
+              <AnimatedNumber
+                className="display-figure num-tabular text-[1.9rem] leading-none"
+                value={value}
+                format={(v) => new Intl.NumberFormat("en-IN", { maximumFractionDigits: 1 }).format(v)}
+              />
+            ) : (
+              <span className="display-figure num-tabular text-[1.9rem] leading-none">{value}</span>
+            )}
             {unit && (
               <span className={cn("text-xs font-semibold", inverse ? "text-white/70" : "text-inkMuted")}>
                 {unit}
