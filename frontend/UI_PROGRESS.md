@@ -26,10 +26,10 @@ Light mode is default; dark mode via `.dark` on `<html>`.
 - [x] `npm run build` green
 
 ## Phase 3 — App Shell & Floating Navigation
-- [ ] Floating pill command bar (monogram, 5 nav pills w/ layoutId, status pill, theme toggle)
-- [ ] `AnimatePresence` view transitions
-- [ ] API mode wired to real client
-- [ ] `npm run build` green
+- [x] Floating pill command bar (monogram, 5 nav pills w/ layoutId, status pill, theme toggle)
+- [x] `AnimatePresence` view transitions
+- [x] API mode wired to real client
+- [x] `npm run build` green
 
 ## Phase 4 — Forecast & Peak-Charging views
 - [ ] `ForecastView.tsx` bento KPIs + simulator console + hero chart + insight strip
@@ -64,3 +64,4 @@ Light mode is default; dark mode via `.dark` on `<html>`.
 - `src/components/ExpressiveGauges.tsx` — new
 - `src/components/KPICard.tsx` — upgraded (emphasis modes, display figures)
 - `src/components/{Badge,Button,Select,Card}.tsx` — recolored to steel ramp
+- `src/App.tsx` — floating pill command bar, theme toggle, live API badge, view transitions
