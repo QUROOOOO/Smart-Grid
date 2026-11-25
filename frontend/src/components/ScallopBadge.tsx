@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { cn } from "../lib/utils";
+import { M3_SLOW_SPATIAL } from "../lib/motion";
 
 export interface ScallopBadgeProps {
   children: React.ReactNode;
@@ -40,9 +41,9 @@ export function ScallopBadge({
   return (
     <motion.div
       key={String(value ?? "static")}
-      initial={{ scale: 0.88, rotate: -7 }}
+      initial={{ scale: 0.9, rotate: -18 }}
       animate={{ scale: 1, rotate: 0 }}
-      transition={{ type: "spring", stiffness: 380, damping: 28, mass: 0.9 }}
+      transition={M3_SLOW_SPATIAL}
       style={{ width: size, height: size }}
       className={cn("relative grid flex-shrink-0 place-items-center", className)}
     >

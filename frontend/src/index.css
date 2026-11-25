@@ -14,27 +14,27 @@
 
   --brand: 26 57 76;            /* #1A394C — punchy anchor */
   --brand-hover: 18 40 54;      /* #122836 */
-  --brand-vivid: 35 78 104;     /* #234E68 — hover / active ring accent */
+  --brand-vivid: 34 83 112;     /* #234E68 — hover / active ring accent */
   --brand-bright: 88 166 204;   /* #58A6CC — halos, gradients, secondary series */
   --brand-wash: 227 238 244;    /* #E3EEF4 — soft filled chips */
   --brand-rim: 59 120 158;      /* #3B789E — crisp rim on filled pills */
 
-  --ink: 9 9 11;                /* #09090B — true deep black */
-  --ink-secondary: 74 82 90;    /* #4A525A */
+  --ink: 11 12 14;              /* #0B0C0E — true deep black */
+  --ink-secondary: 73 80 87;    /* #495057 */
   --ink-muted: 124 133 141;     /* #7C858D */
-  --border: 225 229 232;        /* #E1E5E8 */
+  --border: 223 228 232;        /* #DFE4E8 */
   --obsidian: 9 9 11;
 }
 
 .dark {
   --canvas: 0 0 0;              /* #000000 — pure black */
-  --surface: 14 14 17;          /* #0E0E11 — true obsidian cards */
-  --surface-tonal: 24 24 28;    /* #18181C — neutral recessed */
+  --surface: 13 13 15;          /* #0D0D0F — pure charcoal cards */
+  --surface-tonal: 24 24 27;    /* #18181B — neutral recessed */
   --surface-hover: 35 35 41;    /* #232329 */
 
   --brand: 26 57 76;            /* #1A394C — filled pills with white text */
   --brand-hover: 18 40 54;
-  --brand-vivid: 78 149 194;    /* #4E95C2 — vivid 203° accent for charts/sliders */
+  --brand-vivid: 58 130 173;    /* #3A82AD — luminous 203° accent */
   --brand-bright: 140 200 230;  /* #8CC8E6 */
   --brand-wash: 23 32 39;       /* #172027 */
   --brand-rim: 59 120 158;      /* #3B789E */
@@ -42,7 +42,7 @@
   --ink: 250 250 250;           /* #FAFAFA */
   --ink-secondary: 161 161 170; /* #A1A1AA */
   --ink-muted: 113 113 122;     /* #71717A */
-  --border: 36 36 41;           /* #242429 */
+  --border: 38 38 43;           /* #26262B */
   --obsidian: 250 250 250;      /* inverse tile flips to near-white in dark */
 }
 
@@ -135,7 +135,7 @@ input[type="range"] {
 @keyframes m3-rise {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -143,14 +143,14 @@ input[type="range"] {
   }
 }
 .m3-stagger > * {
-  animation: m3-rise 460ms cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation: m3-rise 500ms cubic-bezier(0.38, 1.21, 0.22, 1) backwards;
 }
 .m3-stagger > *:nth-child(1) { animation-delay: 0ms; }
-.m3-stagger > *:nth-child(2) { animation-delay: 35ms; }
-.m3-stagger > *:nth-child(3) { animation-delay: 70ms; }
-.m3-stagger > *:nth-child(4) { animation-delay: 105ms; }
-.m3-stagger > *:nth-child(5) { animation-delay: 140ms; }
-.m3-stagger > *:nth-child(6) { animation-delay: 175ms; }
-.m3-stagger > *:nth-child(7) { animation-delay: 210ms; }
-.m3-stagger > *:nth-child(8) { animation-delay: 245ms; }
-.m3-stagger > *:nth-child(n + 9) { animation-delay: 280ms; }
+.m3-stagger > *:nth-child(2) { animation-delay: 45ms; }
+.m3-stagger > *:nth-child(3) { animation-delay: 90ms; }
+.m3-stagger > *:nth-child(4) { animation-delay: 135ms; }
+.m3-stagger > *:nth-child(5) { animation-delay: 180ms; }
+.m3-stagger > *:nth-child(6) { animation-delay: 225ms; }
+.m3-stagger > *:nth-child(7) { animation-delay: 270ms; }
+.m3-stagger > *:nth-child(8) { animation-delay: 315ms; }
+.m3-stagger > *:nth-child(n + 9) { animation-delay: 360ms; }

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { M3Icon } from "./components/M3Icon";
 import { GridPulseMark } from "./components/GridPulseMark";
-import { M3_SPRING_DEFAULT_SPATIAL } from "./lib/motion";
+import { M3_FAST_SPATIAL, M3_SPRING_DEFAULT_SPATIAL } from "./lib/motion";
 import { ForecastView } from "./views/ForecastView";
 import { PeakChargingView } from "./views/PeakChargingView";
 import { CEAStateExplorerView } from "./views/CEAStateExplorerView";
@@ -116,7 +116,7 @@ export function App() {
                 >
                   {active && (
                     <motion.span
-                      layoutId="nav-pill"
+                      layoutId="active-nav-pill"
                       transition={SPRING}
                       className="absolute inset-0 rounded-full bg-brand shadow-pill"
                     />
@@ -156,13 +156,15 @@ export function App() {
               <span className="hidden sm:inline">{apiMode === "live" ? "Live API" : "Mock"}</span>
             </span>
 
-            <button
+            <motion.button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               aria-label="Toggle color theme"
+              whileTap={{ scale: 0.92, rotate: -12 }}
+              transition={M3_FAST_SPATIAL}
               className="grid h-9 w-9 place-items-center rounded-full bg-surfaceTonal text-inkSecondary ring-1 ring-borderSubtle/60 transition-colors hover:bg-surfaceHover hover:text-ink"
             >
               <M3Icon name={theme === "dark" ? "light_mode" : "dark_mode"} size={20} filled />
-            </button>
+            </motion.button>
           </div>
         </div>
       </header>
