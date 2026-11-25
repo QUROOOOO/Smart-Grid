@@ -2,32 +2,108 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Material 3 Expressive · Steel Blue tonal system ─────────────────────────
+   Single-hue ramp derived from #1A394C (H 199° · S 49% · L 20%).
+   Vivid steps exist so the UI feels alive without importing foreign hues.   */
+:root {
+  --canvas: 244 245 246;        /* #F4F5F6 — 5% #1A394C in white */
+  --surface: 255 255 255;       /* pure white bento */
+  --surface-tonal: 232 235 237; /* #E8EBED — 10% tint */
+  --surface-hover: 220 225 229; /* #DCE1E5 — 18% tint */
+
+  --brand: 26 57 76;            /* #1A394C — anchor */
+  --brand-hover: 18 40 54;      /* #122836 */
+  --brand-vivid: 46 110 146;    /* #2E6E92 — saturated accent for charts/focus */
+  --brand-bright: 88 166 204;   /* #58A6CC — halos, gradients, secondary series */
+  --brand-wash: 227 238 244;    /* #E3EEF4 — filled soft surfaces */
+
+  --ink: 17 20 23;              /* #111417 */
+  --ink-secondary: 74 82 90;    /* #4A525A */
+  --ink-muted: 124 133 141;     /* #7C858D */
+  --border: 223 228 232;        /* #DFE4E8 */
+  --obsidian: 17 20 23;
+}
+
+.dark {
+  --canvas: 11 13 15;           /* #0B0D0F */
+  --surface: 20 24 28;          /* #14181C */
+  --surface-tonal: 30 36 42;    /* #1E242A */
+  --surface-hover: 40 48 56;    /* #283038 */
+
+  --brand: 26 57 76;
+  --brand-hover: 18 40 54;
+  --brand-vivid: 92 163 200;    /* #5CA3C8 — lifted for dark surfaces */
+  --brand-bright: 140 200 230;  /* #8CC8E6 */
+  --brand-wash: 24 40 52;       /* #182834 */
+
+  --ink: 255 255 255;
+  --ink-secondary: 166 176 184; /* #A6B0B8 */
+  --ink-muted: 110 120 128;     /* #6E7880 */
+  --border: 37 44 51;           /* #252C33 */
+  --obsidian: 255 255 255;      /* inverse tile flips to white in dark */
+}
+
 @layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
   body {
-    background-color: #111214;
-    color: #F4F4F5;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: rgb(var(--canvas));
+    color: rgb(var(--ink));
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    transition: background-color 240ms ease, color 240ms ease;
+  }
+  ::selection {
+    background-color: rgb(var(--brand) / 0.22);
+    color: rgb(var(--ink));
   }
 }
 
-/* Custom scrollbars for industrial telemetry feel */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #111214;
-}
-::-webkit-scrollbar-thumb {
-  background: #272A30;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #353942;
+@layer utilities {
+  /* Tabular numerals for high-frequency dynamic numbers */
+  .num-tabular {
+    font-family: "JetBrains Mono", monospace;
+    font-feature-settings: "tnum" on, "zero" on;
+    font-variant-numeric: tabular-nums;
+  }
+  /* Expressive display figure */
+  .display-figure {
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.035em;
+    font-variant-numeric: tabular-nums;
+  }
+  /* Hairline ring used on bento cards instead of heavy borders */
+  .ring-hairline {
+    box-shadow: inset 0 0 0 1px rgb(var(--border));
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-/* Tabular numerals for high-frequency dynamic numbers */
-.num-tabular {
-  font-family: 'JetBrains Mono', monospace;
-  font-feature-settings: 'tnum' on, 'zero' on;
+/* Scrollbars — steel tinted */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--border));
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--ink-muted) / 0.55);
+}
+
+/* Native range input fallback (kept neutral until WavySlider replaces it) */
+input[type="range"] {
+  accent-color: rgb(var(--brand));
 }
